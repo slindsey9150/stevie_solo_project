@@ -19,6 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import CreateManageCharacters from '../CreateManageCharacters/CreateManageCharacters';
+import CreateManageCampaigns from '../CreateManageCampaigns/CreateManageCampaigns';
 
 import './App.css';
 
@@ -59,6 +61,21 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Characters else shows LoginPage
+            exact
+            path="/characters"
+          >
+            <CreateManageCharacters/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/campaigns"
+          >
+            <CreateManageCampaigns/>
+          </ProtectedRoute>
+          
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
