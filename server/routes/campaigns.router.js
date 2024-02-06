@@ -9,7 +9,7 @@ const {
 router.get('/', rejectUnauthenticated, (req, res) => {
   // what is the value of req.user????
   console.log('req.user:', req.user);
-  queryText = `SELECT * FROM "characters"
+  queryText = `SELECT * FROM "adventure"
   WHERE user_id = $1;
   `
   queryParams = [req.user.id]
@@ -17,7 +17,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   pool .query(queryText, queryParams)
     .then((results) => res.send(results.rows))
     .catch((error) => {
-      console.log('Error making SELECT for characters:', error);
+      console.log('Error making SELECT for campaigns:', error);
       res.sendStatus(500);
     });
   }

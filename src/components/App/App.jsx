@@ -21,8 +21,12 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import CreateManageCharacters from '../CreateManageCharacters/CreateManageCharacters';
 import CreateManageCampaigns from '../CreateManageCampaigns/CreateManageCampaigns';
+import DeleteCharacter from '../DeleteCharacter/DeleteCharacter';
+import CreateCharacter from '../CreateCharacter/CreateCharacter';
 
 import './App.css';
+
+
 
 function App() {
   const dispatch = useDispatch();
@@ -74,6 +78,20 @@ function App() {
             path="/campaigns"
           >
             <CreateManageCampaigns/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/deletecharacter"
+          >
+            <DeleteCharacter/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/createcharacter"
+          >
+            <CreateCharacter/>
           </ProtectedRoute>
           
 
