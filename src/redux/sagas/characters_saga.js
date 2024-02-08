@@ -11,6 +11,21 @@ function* getCharacters  (action) {
         console.log('error getting characters', error);
     }
 }
+// function* postCharacter  (action) {
+//     const character = {
+//         race: action.race,
+//         class: action.class,
+//         user_id: action.payload.user_id
+//     }
+//     try {
+//          axios.post('/api/characters', character)
+//         console.log('response', response);
+//         yield put({ type: 'SET_CHARACTERS', payload: response.data });
+//     }
+//     catch (error) {
+//         console.log('error getting characters', error);
+//     }
+// }
 
 function* charactersSaga() {
     yield takeLatest ('FETCH_CHARACTERS', getCharacters);

@@ -17,7 +17,7 @@ const getData = () => {
     dispatch({type:`${props.dispatchType}`})
 }
 const data = [
-    { column1: useReducer[0]?.level, column2: 'Data 2', column3: useReducer[0]?.name, column4: 'Data 4', column5: 'Data 5' },
+    { column1: useReducer[0]?.level, column2: useReducer[0]?.class, column3: useReducer[0]?.name, column4: useReducer[0]?.race, column5: 'Data 5' },
     { column1: 'Data 4', column2: 'Data 5', column3: 'Data 6', column4: 'Data 4', column5: 'Data 5' },
     { column1: 'Data 7', column2: 'Data 8', column3: 'Data 9', column4: 'Data 4', column5: 'Data 5' }
 ];

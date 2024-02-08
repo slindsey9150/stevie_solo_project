@@ -9,8 +9,11 @@ const {
 router.get('/', rejectUnauthenticated, (req, res) => {
   // what is the value of req.user????
   console.log('req.user:', req.user);
-  queryText = `SELECT * FROM "characters"
-  WHERE user_id = $1;
+  queryText = `SELECT * FROM "characters" 
+  JOIN "class"ON class.id = "characters".class_id
+  JOIN "races"ON races.id = "characters".race_id
+  WHERE characters.user_id = $1
+  ;
   `
   queryParams = [req.user.id]
   if(req.isAuthenticated()) {

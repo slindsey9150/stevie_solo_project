@@ -9,9 +9,10 @@ const CharactersReducer = (state = [], action) => {
         return state;
     }
   };
+ 
 
 
 
   export default combineReducers ({
-   CharactersReducer
+   CharactersReducer,
   })

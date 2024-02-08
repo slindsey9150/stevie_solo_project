@@ -1,0 +1,32 @@
+
+        /* Medieval-themed table styles */
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: 'Garamond', serif;
+            border: 3px solid #8B4513; /* Brown border */
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 2px solid #8B4513; /* Brown border bottom */
+            border-right: 1px solid #8B4513; /* Brown border right */
+            text-align: center;
+        }
+
+        th {
+            background-color: #D2B48C; /* Tan background */
+            color: #8B4513; /* Brown text color */
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #FFF8DC; /* Ivory background */
+        }
+
+        /* Hover effect */
+        tr:hover {
+            background-color: #FFEFD5; /* Papaya Whip background */
+        }

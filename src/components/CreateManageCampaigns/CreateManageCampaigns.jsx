@@ -2,11 +2,12 @@
 
 //import components here
 import ManagerComponent from '../ManagerComponent/ManagerComponent';
-
+import ButtonRoute from '../ButtonRoute/ButtonRoute';
 
 export default function CreateManageCampaigns () {
 
     return (
+        <>
         <div> 
             This is the page that will
              route you to different
@@ -25,5 +26,12 @@ export default function CreateManageCampaigns () {
             reducerType='campaigns'
             reducer='CampaignsReducer'/>
         </div>
+        <ButtonRoute
+        name='Create Campaign'
+        route='/createcampaign'/>
+        <ButtonRoute
+        name='Delete Campaign'
+        route='/deletecampaign'/>
+       </>
     )
 }

@@ -22,9 +22,18 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import CreateManageCharacters from '../CreateManageCharacters/CreateManageCharacters';
 import CreateManageCampaigns from '../CreateManageCampaigns/CreateManageCampaigns';
 import DeleteCharacter from '../DeleteCharacter/DeleteCharacter';
-import CreateCharacter from '../CreateCharacter/CreateCharacter';
+import CreateCharacter from '../CharacterCreation/CreateCharacter/CreateCharacter'
+import CharacterAbilityScores from '../CharacterCreation/CharacterCreationTabs/CharacterAbilityScores';
+import CharacterClass from '../CharacterCreation/CharacterCreationTabs/CharacterClass';
+import CharacterDescription from '../CharacterCreation/CharacterCreationTabs/CharacterDescription';
+import CharacterRace from '../CharacterCreation/CharacterCreationTabs/CharacterRace';
+import CharacterEquipment from '../CharacterCreation/CharacterCreationTabs/CharacterEquipment';
+import DeleteCampaign from '../DeleteCampaign/DeleteCampaign';
+import CreateCampaign from '../CreateCampaign/CreateCampaign';
+import CharacterReview from '../CharacterCreation/CharacterCreationTabs/CharacterReview';
 
 import './App.css';
+
 
 
 
@@ -82,9 +91,16 @@ function App() {
           <ProtectedRoute
             // logged in shows Campaigns else shows LoginPage
             exact
-            path="/deletecharacter"
+            path="/createcampaign"
           >
-            <DeleteCharacter/>
+            <CreateCampaign/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/deletecampaign"
+          >
+            <DeleteCampaign/>
           </ProtectedRoute>
           <ProtectedRoute
             // logged in shows Campaigns else shows LoginPage
@@ -92,6 +108,55 @@ function App() {
             path="/createcharacter"
           >
             <CreateCharacter/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterabilityscores"
+          >
+            <CharacterAbilityScores/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterclass"
+          >
+            <CharacterClass/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterdescription"
+          >
+            <CharacterDescription/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterequipment"
+          >
+            <CharacterEquipment/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterrace"
+          >
+            <CharacterRace/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/characterreview"
+          >
+            <CharacterReview/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows Campaigns else shows LoginPage
+            exact
+            path="/deletecharacter"
+          >
+            <DeleteCharacter/>
           </ProtectedRoute>
           
 

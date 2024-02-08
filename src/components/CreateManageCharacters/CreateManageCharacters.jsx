@@ -17,7 +17,7 @@ export default function CreateManageCharacters () {
             firstColumn="Level"
             secondColumn='Class'
             thirdColumn='Name'
-            fourthColumn='Party'
+            fourthColumn='Race'
             fifthColumn='DM'
             dispatchType='FETCH_CHARACTERS'
             reducerType='characters'
