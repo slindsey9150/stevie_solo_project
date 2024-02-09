@@ -5,13 +5,14 @@ const router = express.Router();
 const {
   rejectUnauthenticated
 } = require('../modules/authentication-middleware');
-
+// JOIN class on class.id = characters.class_id
 router.get('/', rejectUnauthenticated, (req, res) => {
   // what is the value of req.user????
   console.log('req.user:', req.user);
-  queryText = `SELECT * FROM "characters" 
-
-  WHERE characters.user_id = $1
+  queryText = `SELECT * FROM characters
+  JOIN races ON races.id = characters.race_id
+  JOIN "class"ON "class".class_id = "characters".class_id
+  WHERE characters.player_id = $1
   ;
   `
   queryParams = [req.user.id]
@@ -31,17 +32,22 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/', rejectUnauthenticated, (req,res) => {
   const character = req.body
   const id = req.user.id
-  queryText = `INSERT INTO Characters ( "user_id", "name", "level", "charisma", "constitution", "strength", "dexterity", "wisdom", "intelligence", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
+  queryText = `INSERT INTO Characters ( "user_id", "name", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
   VALUES
 ( $1, $2, $3, $4, $5, $6, $7, $8, $9, true, 1, 1, true, $10, true, $11, 1)`
 
-const queryParams = [id, character.name, character.level, character.charisma, character.constitution, character.strength, character.dexterity, character.wisdom, character.intelligence, character.backstory, character.notes]
+const queryParams = [id, character.name, character.level, character.charisma,
+                    character.constitution, character.strength, character.dexterity,
+                    character.wisdom, character.intelligence, character.backstory,
+                    character.notes]
  if(req.isAuthenticated()) {
 pool.query(queryText, queryParams)
-.then((results) => res.sendStatus(200))
-.catch((error) => 
+.then((results) => {
+res.sendStatus(200)})
+
+.catch((error) => {
 console.log('error posting query', error),
- res.sendStatus(500));
+ res.sendStatus(500)});
  }
  else {
   res.sendStatus(403)

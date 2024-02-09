@@ -119,10 +119,10 @@ export default function CharacterAbilityScores() {
             <tbody>
                 <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/><BtnRpt stateName='setYourCha' name='Confirm Score'/></td>
                 <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/><BtnRpt stateName='setYourConst' name='Confirm Score'/></td>
-                <td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setYourInt' name='Confirm Score'/></td></tr>
-                <tr><td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setYourDex' name='Confirm Score'/></td>
-                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setYourWis' name='Confirm Score'/></td>
-                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setYourStr' name='Confirm Score'/></td></tr>
+                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setYourDex' name='Confirm Score'/></td></tr>
+                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setYourInt' name='Confirm Score'/></td>
+                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setYourStr' name='Confirm Score'/></td>
+                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setYourWis' name='Confirm Score'/></td></tr>
                 
             </tbody>
         </table>
