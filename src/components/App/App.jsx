@@ -31,7 +31,12 @@ import CharacterEquipment from '../CharacterCreation/CharacterCreationTabs/Chara
 import DeleteCampaign from '../DeleteCampaign/DeleteCampaign';
 import CreateCampaign from '../CreateCampaign/CreateCampaign';
 import CharacterReview from '../CharacterCreation/CharacterCreationTabs/CharacterReview';
-
+import ResourcePage from '../ResourcePage/ResourcePage';
+import RuleBookPage from '../AllRules/RuleBookPage/RuleBookPage'
+import RuleCategory from '../AllRules/RuleCategory/RuleCategory'
+import EquipmentPage from '../AllEquipment/EquipmentPage/EquipmentCategoriesPage'
+import EquipmentCategory from '../AllEquipment/EquipmentCategory/EquipmentCategoryPage'
+import SpellsPage from '../AllSpells/SpellsPage/SpellsPage'
 import './App.css';
 
 
@@ -157,6 +162,49 @@ function App() {
             path="/deletecharacter"
           >
             <DeleteCharacter/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows SpellsPage else shows LoginPage
+            exact
+            path="/spells"
+          >
+            <SpellsPage />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows SpellsPage else shows LoginPage
+            exact
+            path="/rulebook"
+          >
+            <RuleBookPage />
+          </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows SpellsPage else shows LoginPage
+            
+            path='/rulebook/filtered'
+          >
+            <RuleCategory />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows EquipmentPage else shows LoginPage
+            exact
+            path="/equipment"
+          >
+            <EquipmentPage />
+            
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows EquipmentPage else shows LoginPage
+            exact
+            path="/resources"
+          >
+            <ResourcePage />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows EquipmentPage else shows LoginPage
+            exact
+            path="/equipment/filtered"
+          >
+            <EquipmentCategory />
           </ProtectedRoute>
           
 

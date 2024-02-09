@@ -7,6 +7,10 @@
             font-family: 'Garamond', serif;
             border: 3px solid #8B4513; /* Brown border */
         }
+        .oneHead {
+            background-color: #D2B48C;
+            text-align: center;
+        }
 
         th, td {
             padding: 10px;
@@ -29,4 +33,26 @@
         /* Hover effect */
         tr:hover {
             background-color: #FFEFD5; /* Papaya Whip background */
+        }
+
+        .BtnRpt {
+            font-family: 'Garamond', serif;
+            font-size:x-large;
+            border: 0cap;
+            color:#8B4513;
+            background-color:#fffaf6;
+            align-items: center;
+        }
+        .yourClass {
+            font-family: 'Garamond', serif;
+            font-size:x-large;
+            color:#8B4513;
+            background-color:#fffaf6;
+            position:absolute;
+            left: 50%;
+             transform: translate(-50%, -80%);
+        }
+        .ConfButton {
+            font-family: 'Garamond', serif;
+            font-size:x-large;
         }

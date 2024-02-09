@@ -9,7 +9,7 @@ import { useEffect } from "react"
 
 export default function CharacterAbilityScores() {
     const characterCreation = useSelector(store => store.createchars.setrace)
-    let [yourCha, setyourCha] = useState()
+    let [yourCha, setyourCha] = useState('')
     let [yourDex, setyourDex] = useState()
     let [yourConst, setyourConst] = useState()
     let [yourStr, setyourStr] = useState()
@@ -73,8 +73,7 @@ export default function CharacterAbilityScores() {
             </>
         )
     }
-    let allScores = [{charisma:{yourCha}},{constitution:{yourConst}},{dexterity:{yourDex}},
-                    {intelligence:{yourInt}},{strength:{yourStr}},{wisdom:{yourWis}}]
+    let allScores = [yourCha,yourConst,yourDex,yourInt,yourStr,yourWis]
   
     const setRace = () => {
         dispatch({type:'SET_AS', payload:allScores})
@@ -87,13 +86,34 @@ export default function CharacterAbilityScores() {
     return (
         <>
         <NavCharacter/>
-        <>This is where you'll choose your Ability Scores</>
-        <p>Your Ability Scores: Charisma:{yourCha} | Constitution:{yourConst} |
+    
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br/>
+        <br/>
+        <p className="yourClass">Your Ability Scores: Charisma:{yourCha} | Constitution:{yourConst} |
         Intelligenct:{yourInt} | Dexterity:{yourDex} | Wisdom:{yourWis} |
         Strength:{yourStr} 
-        </p> <button onClick = {setRace}>Confirm your Ability Scores</button>
-       <p><b>Pick your race</b></p> 
+        <button onClick = {setRace}>Confirm your Ability Scores</button>
+        </p> 
+        <br/>
+        <br/>
+        <br/>
+
         <table>
+        <thead>
+                    <tr>
+                    <th colSpan='3' className='oneHead'>Choose Your Ability Scores</th>
+                    </tr>
+                   
+            
+                
+            </thead>
             
       
             <tbody>
@@ -102,7 +122,7 @@ export default function CharacterAbilityScores() {
                 <td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setYourInt' name='Confirm Score'/></td></tr>
                 <tr><td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setYourDex' name='Confirm Score'/></td>
                 <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setYourWis' name='Confirm Score'/></td>
-                <td><InpRpt value={yourStr} type='number' stateName='setyourStr' name='Strength'/><br></br><BtnRpt stateName='setYourStr' name='Confirm Score'/></td></tr>
+                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setYourStr' name='Confirm Score'/></td></tr>
                 
             </tbody>
         </table>

@@ -5,6 +5,9 @@ import userSaga from './user.saga';
 import ruleBookSaga from './rulebook.saga';
 import charactersSaga from './characters_saga';
 import campaignsSaga from './campaigns.saga';
+import spellsSaga from './spells.saga';
+import equipmentSaga from './equipment.saga';
+import createSaga from './create_character.saga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,6 +22,9 @@ export default function* rootSaga() {
     userSaga(),
     ruleBookSaga(),
     charactersSaga(),
-    campaignsSaga()
+    campaignsSaga(),
+    spellsSaga(),
+    equipmentSaga(),
+    createSaga()
   ]);
 }

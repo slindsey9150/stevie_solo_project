@@ -1,22 +1,25 @@
-
+import { useState } from "react"
 import NavCharacter from "../../NavCharacter/NavCharacter"
-
+import { useDispatch } from "react-redux"
 
 
 
 export default function CharacterDescription() {
-    let InpRpt = (props) => {
-        return (
-            <>
-            <>{props.name}</>
-            <input 
-            type="text"
-            placeholder = {props.placehold}
-            onChange={(event) => {{props.stateName}( event.target.value )}}
-            ></input>
-            </>
-        )
+    const [useBackstory, setUseBackstory] = useState('')
+    const [useNotes, setUseNotes] = useState('')
+    const dispatch = useDispatch()
+    const handleSaveBackstory = () => {
+        console.log('save backstory clicked', useBackstory);
+        dispatch ({type:'SET_BACKSTORY', payload:useBackstory})
     }
+
+
+    const handleSaveNotes = () => {
+        console.log('save notes clicked', useNotes);
+        dispatch ({type:'SET_NOTES', payload:useNotes})
+
+    }
+
     let BtnRpt = (props) => {
         return (
             <button onClick = {(event) => {handleClick(event)}}>{props.name}</button>
@@ -55,10 +58,25 @@ export default function CharacterDescription() {
     return (
         <>
         <NavCharacter/>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <>This is where you'll choose the Character Description</>
         <FilterComp/>
-        <InpRpt placehold='Backstory'/> <button>Save Backstory</button>
-        <InpRpt placehold='Additional Notes'/> <button>Save Notes</button>
+        <input value={useBackstory}
+        onChange={(event) => setUseBackstory(event.target.value)}
+        placeholder='Backstory'/> 
+        <button
+        onClick={handleSaveBackstory}>Save Backstory</button>
+
+        <input value={useNotes} 
+        onChange={(event) => setUseNotes(event.target.value)}
+        placeholder='Additional Notes'/> 
+        <button onClick={handleSaveNotes}>Save Notes</button>
         </>
     )
 }

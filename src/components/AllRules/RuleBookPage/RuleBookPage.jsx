@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-
+import BackButton from '../../BackButton/BackButton';
 
 export default function RuleBookRouter () {
     const history = useHistory()
@@ -28,7 +28,10 @@ export default function RuleBookRouter () {
         dispatch({type:'FETCH_ROUTER'})
     }
     return (
+        
         <>
+        <BackButton/>
+        <br/>
         {routeProperties.map((property) => { return (
             <button
             onClick ={() => {handleClick(property[1])}}

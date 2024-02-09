@@ -43,7 +43,7 @@ const setClass = (state = [], action) => {
   }
   const setBackstory = (state = [], action) => {
     switch (action.type) {
-      case 'SET_CLASS':
+      case 'SET_BACKSTORY':
         return action.payload
       default:
         return state
@@ -51,7 +51,7 @@ const setClass = (state = [], action) => {
   }
   const setNotes = (state = [], action) => {
     switch (action.type) {
-      case 'SET_CLASS':
+      case 'SET_NOTES':
         return action.payload
       default:
         return state

@@ -27,10 +27,24 @@ export default function CharacterRace() {
     return (
         <>
         <NavCharacter/>
-        <>This is where you'll choose the Character Race</>
-        <p>Your race: {yourRace}</p> <button onClick = {setRace}>Confirm your Race</button>
-       <p><b>Pick your race</b></p> 
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <p className="yourClass">Your Race: {yourRace} <button className='ConfButton'onClick = {setRace}>Confirm your Race</button></p> 
+       <br/><br/><br/>
         <table>
+            <thead>
+                    <tr>
+                    <th colSpan='3' className='oneHead'>Choose Your Race</th>
+                    </tr>
+                   
+            
+                
+            </thead>
       
             <tbody>
                 <tr><td><BtnRpt name='Dragonborn'/></td><td><BtnRpt name='Dwarf'/></td><td><BtnRpt name='Elf'/></td></tr>

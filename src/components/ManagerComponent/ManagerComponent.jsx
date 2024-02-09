@@ -8,6 +8,7 @@ let modReducer= props.reducer
 // console.log('modReducer', modReducer);
 // console.log('reducer', reducer.CharactersReducer);
 let useReducer = reducer[modReducer]
+console.log('use reducer', useReducer);
 // console.log('useReducer', useReducer);
 // console.log('characters:', reducer);
 useEffect(() => {
@@ -16,11 +17,7 @@ useEffect(() => {
 const getData = () => {
     dispatch({type:`${props.dispatchType}`})
 }
-const data = [
-    { column1: useReducer[0]?.level, column2: useReducer[0]?.class, column3: useReducer[0]?.name, column4: useReducer[0]?.race, column5: 'Data 5' },
-    { column1: 'Data 4', column2: 'Data 5', column3: 'Data 6', column4: 'Data 4', column5: 'Data 5' },
-    { column1: 'Data 7', column2: 'Data 8', column3: 'Data 9', column4: 'Data 4', column5: 'Data 5' }
-];
+const data = useReducer
 console.log('character name', useReducer[0]?.name);
 
 useEffect(() => {
@@ -52,6 +49,7 @@ function populateTable(data) {
                         <th>{props.thirdColumn}</th>
                         <th>{props.fourthColumn}</th>
                         <th>{props.fifthColumn}</th>
+                        <th>{props.sixthColumn}</th>
                     </tr>
                 </thead>
                 <tbody>

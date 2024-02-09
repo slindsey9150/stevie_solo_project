@@ -3,11 +3,13 @@
 //import components here
 import ManagerComponent from '../ManagerComponent/ManagerComponent';
 import ButtonRoute from '../ButtonRoute/ButtonRoute';
+import BackButton from '../BackButton/BackButton';
 
 export default function CreateManageCampaigns () {
 
     return (
         <>
+        <BackButton/>
         <div> 
             This is the page that will
              route you to different

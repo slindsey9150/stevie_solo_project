@@ -14,7 +14,7 @@ export default function CharacterClass() {
     const dispatch = useDispatch()
     let BtnRpt = (props) => {
         return (
-            <button onClick = {(event) => {handleClick(event)}}>{props.name}</button>
+            <button className = 'BtnRpt'onClick = {(event) => {handleClick(event)}}>{props.name}</button>
         )
     }
 
@@ -31,11 +31,28 @@ let [yourClass, setYourClass] = useState('')
     return (
         <>
         <NavCharacter/>
-        <>This is where you'll choose the Character Class</>
-        <p>Your Class: {yourClass}</p>
-        <button onClick = {setClass}>Confirm Your Class</button>
-       <p><b>Pick your class</b></p> 
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <p className="yourClass">Your Class: {yourClass} <button className='ConfButton'onClick = {setClass}>Confirm Your Class</button></p>
+        
+     
+      <br></br>
+      <br></br>
+      <br></br>
         <table>
+            <thead>
+                    <tr>
+                    <th colSpan='3' className='oneHead'>Choose Your Class</th>
+                    </tr>
+                   
+            
+                
+            </thead>
       
             <tbody>
                 <tr><td><BtnRpt name='Barbarian'/></td><td><BtnRpt name='Bard'/></td><td><BtnRpt name='Cleric'/></td></tr>
@@ -46,32 +63,6 @@ let [yourClass, setYourClass] = useState('')
             </tbody>
         </table>
 
-        <table>
-    <thead>
-        <tr>
-            <th>Character</th>
-            <th>Class</th>
-            <th>Level</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Sir Galahad</td>
-            <td>Knight</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Lady Guinevere</td>
-            <td>Princess</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>Merlin</td>
-            <td>Wizard</td>
-            <td>12</td>
-        </tr>
-    </tbody>
-</table>
         </>
     )
 }

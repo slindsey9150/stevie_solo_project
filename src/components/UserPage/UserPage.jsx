@@ -21,7 +21,7 @@ function UserPage() {
      <HomeScreenRoute
      text="Additional Tabletop RPG Resources"
      displayImg="url for image"
-     route="/"/>
+     route="/resources/"/>
      <HomeScreenRoute
      text="Create/Manage Campaigns"
      displayImg="url for image"

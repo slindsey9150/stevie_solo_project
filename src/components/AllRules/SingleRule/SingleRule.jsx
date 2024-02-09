@@ -12,7 +12,7 @@ function SingleRule () {
     let proficienciesUrl = rule?.url?.substr(0,18)
 if (proficienciesUrl = '/api/proficiencies') {
         firstValue = rule.name;
-        secondValue = [...rule.races]
+    
         console.log('second value', secondValue);
     
 }

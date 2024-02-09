@@ -27,6 +27,8 @@ app.use(passport.session());
 // Routes
 app.use('/api/user', userRouter);
 app.use('/api/rulebook', dndRouter);
+app.use('/api/spells', dndRouter);
+app.use('/api/equipment', dndRouter);
 app.use('/api/characters', charRouter);
 app.use('/api/campaigns', campRouter)
 

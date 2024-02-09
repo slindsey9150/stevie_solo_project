@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import SingleRule from '../SingleRule/SingleRule';
+import BackButton from '../../BackButton/BackButton';
 export default function RuleCategory () {
 
     const ruleBook = useSelector(store => store.rulebook)
@@ -16,6 +17,8 @@ export default function RuleCategory () {
 
     return (
         <>
+        <BackButton/>
+        <br/>
         {rulesMap?.map((rule) => { return <button onClick = {() => {handleClick(rule.url)}}key={rule.index}>{rule.name}</button>})}
         <SingleRule/>
         </>
