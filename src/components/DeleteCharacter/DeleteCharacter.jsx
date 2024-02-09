@@ -15,7 +15,7 @@ export default function DeleteCharacter () {
         <>
         <>This is where you'll Delete a Character</>
         {store.CharactersReducer?.map((character) => { return (
-            <p key={character.id}>{Object.values(character)}<button onClick={() => {handleDelete(character.id)}}>Delete Character</button></p>
+            <p key={character.id}>{Object.values(character)}<button onClick={() => {handleDelete(character.charid)}}>Delete Character</button></p>
         )
         })}
         </>

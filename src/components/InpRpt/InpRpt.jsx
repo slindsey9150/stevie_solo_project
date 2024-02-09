@@ -1,4 +1,15 @@
+import { useState } from "react"
+
 let InpRpt = (props) => {
+
+
+  let [yourCha, setyourCha] = useState('')
+  let [yourDex, setyourDex] = useState()
+  let [yourConst, setyourConst] = useState()
+  let [yourStr, setyourStr] = useState()
+  let [yourWis, setyourWis] = useState()
+  let [yourInt, setyourInt] = useState()
+
     let onChangeFun;
     if (props.stateName === 'Cha'){
         onChangeFun= (

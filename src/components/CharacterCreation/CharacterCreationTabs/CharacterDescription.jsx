@@ -55,6 +55,11 @@ export default function CharacterDescription() {
         )
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        handleSaveBackstory()
+        handleSaveNotes()
+    }
     return (
         <>
         <NavCharacter/>
@@ -67,16 +72,17 @@ export default function CharacterDescription() {
         <br></br>
         <>This is where you'll choose the Character Description</>
         <FilterComp/>
+        <form onSubmit = {handleSubmit}>
         <input value={useBackstory}
         onChange={(event) => setUseBackstory(event.target.value)}
         placeholder='Backstory'/> 
-        <button
-        onClick={handleSaveBackstory}>Save Backstory</button>
-
         <input value={useNotes} 
         onChange={(event) => setUseNotes(event.target.value)}
         placeholder='Additional Notes'/> 
-        <button onClick={handleSaveNotes}>Save Notes</button>
+        <button>Save notes and backstory</button>
+        </form>
+        <br/>
+        <br/>
         </>
     )
 }

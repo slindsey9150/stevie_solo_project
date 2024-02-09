@@ -9,12 +9,19 @@ const {
 router.get('/', rejectUnauthenticated, (req, res) => {
   // what is the value of req.user????
   console.log('req.user:', req.user);
-  queryText = `SELECT * FROM characters
-  JOIN races ON races.id = characters.race_id
-  JOIN "class"ON "class".class_id = "characters".class_id
-  WHERE characters.player_id = $1
+  queryText = `SELECT characters.id AS charid,
+  characters.level,
+  characters.class_id, 
+  characters.name,
+  characters.race_id
+  FROM characters 
+  JOIN "class" ON class.class_id = characters.class_id
+  JOIN "races" ON races.id = characters.race_id
+  WHERE characters.player_id = $1;
   ;
   `
+  //JOIN races ON races.id = characters.race_id
+  //JOIN "class"ON "class".class_id = "characters".class_id
   queryParams = [req.user.id]
   if(req.isAuthenticated()) {
   pool .query(queryText, queryParams)
@@ -32,7 +39,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/', rejectUnauthenticated, (req,res) => {
   const character = req.body
   const id = req.user.id
-  queryText = `INSERT INTO Characters ( "user_id", "name", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
+  queryText = `INSERT INTO Characters ( "player_id", "name", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
   VALUES
 ( $1, $2, $3, $4, $5, $6, $7, $8, $9, true, 1, 1, true, $10, true, $11, 1)`
 

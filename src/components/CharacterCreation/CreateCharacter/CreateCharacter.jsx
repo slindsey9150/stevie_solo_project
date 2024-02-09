@@ -22,6 +22,11 @@ export default function CreateCharacter () {
         dispatch({type:'SET_LEVEL', payload:useLevel})
         setUseLevel('')
     }
+    const handleClick = (event) => {
+        event.preventDefault()
+        nameSubmit()
+        levelSubmit()
+    }
 
     return (
         <>
@@ -37,9 +42,15 @@ export default function CreateCharacter () {
 
         <>This is where you'll Create a Character</>
         <p> Welcome to Character Creation!</p>
-        <input value={useName} placeholder='name' type='text' onChange={(event) => setUseName(event.target.value)}/><button onClick={nameSubmit}>Set Name</button>
-        <input value={useLevel} placeholder='level' type='number' onChange={(event) => setUseLevel(event.target.value)}/><button onClick={levelSubmit}>Set Level</button>
-
+        <form onSubmit = {handleClick}>
+        <input value={useName} placeholder='name' type='text' onChange={(event) => setUseName(event.target.value)}/>
+        <input value={useLevel} placeholder='level' type='number' onChange={(event) => setUseLevel(event.target.value)}/>
+        <button>Submit name and level</button>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        <>{}</>
         </>
     )
 }
