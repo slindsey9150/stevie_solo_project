@@ -24,7 +24,11 @@ export default function CreateManageCharacters () {
             dispatchType='FETCH_CHARACTERS'
             reducerType='characters'
             reducer='CharactersReducer'
-            sixthColumn='Edit'/>
+            sixthColumn='Edit'
+            firstRow='level'
+            secondRow='class'
+            thirdRow='name'
+            fourthRow='race'/>
           
             
         </div>

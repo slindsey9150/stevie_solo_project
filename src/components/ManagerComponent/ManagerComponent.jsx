@@ -5,12 +5,8 @@ export default function ManagerComponent(props) {
 const dispatch = useDispatch()
 const reducer = useSelector(store => store[props.reducerType])
 let modReducer= props.reducer
-// console.log('modReducer', modReducer);
-// console.log('reducer', reducer.CharactersReducer);
 let useReducer = reducer[modReducer]
 console.log('use reducer', useReducer);
-// console.log('useReducer', useReducer);
-// console.log('characters:', reducer);
 useEffect(() => {
     getData()
   }, [])
@@ -19,23 +15,9 @@ const getData = () => {
 }
 const data = useReducer
 console.log('character name', useReducer[0]?.name);
+console.log('dataa:', data);
 
-useEffect(() => {
-    populateTable(data)
-  }, [])
 
-function populateTable(data) {
-    var tableBody = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-    for (var i = 0; i < data.length; i++) {
-        var row = tableBody.insertRow();
-        for (var key in data[i]) {
-            if (data[i].hasOwnProperty(key)) {
-                var cell = row.insertCell();
-                cell.textContent = data[i][key];
-            }
-        }
-    }
-}
 
     return (
         <div> This is where the manager component will be
@@ -54,6 +36,16 @@ function populateTable(data) {
                 </thead>
                 <tbody>
                     {/* this portion of the table will fill dynamically with character info */}
+                    {data?.map((row) => {return (
+                        <tr>
+                            <td>{row[props.firstRow]}</td>
+                            <td>{row[props.secondRow]}</td>
+                            <td>{row[props.thirdRow]}</td>
+                            <td>{row[props.fourthRow]}</td>
+                            <td>{row.level}</td>
+                            <td><button>EDIT ✏️</button></td>
+                            </tr>
+                    )})}
                 </tbody>
             </table>
         </div>
