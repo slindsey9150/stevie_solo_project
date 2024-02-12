@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
-
+// import InpRpt from "../../InpRpt/InpRpt"
 
 
 export default function CharacterAbilityScores() {
@@ -117,12 +117,12 @@ export default function CharacterAbilityScores() {
             
       
             <tbody>
-                <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/><BtnRpt stateName='setYourCha' name='Confirm Score'/></td>
-                <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/><BtnRpt stateName='setYourConst' name='Confirm Score'/></td>
-                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setYourDex' name='Confirm Score'/></td></tr>
-                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setYourInt' name='Confirm Score'/></td>
-                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setYourStr' name='Confirm Score'/></td>
-                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setYourWis' name='Confirm Score'/></td></tr>
+                <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/><BtnRpt stateName='setyourCha' name='Confirm Score'/></td>
+                <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/><BtnRpt stateName='setyourConst' name='Confirm Score'/></td>
+                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setyourDex' name='Confirm Score'/></td></tr>
+                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setyourInt' name='Confirm Score'/></td>
+                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setyourStr' name='Confirm Score'/></td>
+                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setyourWis' name='Confirm Score'/></td></tr>
                 
             </tbody>
         </table>

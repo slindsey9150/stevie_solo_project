@@ -3,6 +3,7 @@
 import ManagerComponent from '../ManagerComponent/ManagerComponent';
 import ButtonRoute from '../ButtonRoute/ButtonRoute';
 import BackButton from '../BackButton/BackButton';
+import SingleCharacter from '../CharacterCreation/CharacterCreationTabs/SingleCharacter';
 export default function CreateManageCharacters () {
 
     return (
@@ -28,7 +29,9 @@ export default function CreateManageCharacters () {
             firstRow='level'
             secondRow='class'
             thirdRow='name'
-            fourthRow='race'/>
+            fourthRow='race'
+            keyProp='charid'
+            routePath='viewcharacter'/>
           
             
         </div>
@@ -39,6 +42,9 @@ route='/createcharacter'/>
 <ButtonRoute
 name='Delete Character'
 route='/deletecharacter'/>
+<br/><br/><br/><br/>
+
+<SingleCharacter/>
 </>
     )
 }

@@ -9,6 +9,15 @@ const CharactersReducer = (state = [], action) => {
         return state;
     }
   };
+
+  const SingleCharacter = (state= [], action) => {
+    switch(action.type) {
+    case 'SET_SINGLE':
+      return action.payload;
+      default: 
+      return state;
+  }
+};
  
   
 
@@ -16,4 +25,5 @@ const CharactersReducer = (state = [], action) => {
 
   export default combineReducers ({
    CharactersReducer,
+   SingleCharacter
   })

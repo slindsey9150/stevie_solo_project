@@ -4,12 +4,12 @@ import { useDispatch } from "react-redux"
 export default function DeleteCharacter () {
 
     const handleDelete = (characterId) => {
-        console.log('delete button clicked', characterId);
+        // console.log('delete button clicked', characterId);
         dispatch({type:'DELETE_CHARACTER', payload: characterId})
     }
     const dispatch = useDispatch()
     const store = useSelector(store => store.characters)
-    console.log('store', store);
+    // console.log('store', store);
 
     return (
         <>

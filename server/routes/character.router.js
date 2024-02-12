@@ -14,11 +14,19 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   characters.class_id, 
   characters.name,
   characters.race_id,
+  characters.backstory,
+  characters.notes,
+  characters.charisma,
+  characters.constitution,
+  characters.dexterity,
+  characters.intelligence,
+  characters.strength,
+  characters.wisdom,
   class.class,
   races.race
   FROM characters
   JOIN "class" ON "class".class_id = "characters".class_id
-  JOIN "races" ON races.id = characters.race_id 
+  JOIN "races" ON races.id = characters.race_id
   WHERE characters.player_id = $1
   ;
   
