@@ -7,7 +7,6 @@ export default function CreateCharacter () {
     const nameStore = useSelector(store => store.createchars.setName)
     const levelStore = useSelector(store => store.createchars.setLevel)
     const [useName, setUseName] = useState('')
-    const [useLevel, setUseLevel] = useState('')
     const dispatch = useDispatch()
 
     const nameSubmit = () => {
@@ -17,15 +16,10 @@ export default function CreateCharacter () {
 
 
     }
-    const levelSubmit = () => {
-        console.log('level submitted', useLevel);
-        dispatch({type:'SET_LEVEL', payload:useLevel})
-        setUseLevel('')
-    }
+
     const handleClick = (event) => {
         event.preventDefault()
         nameSubmit()
-        levelSubmit()
     }
 
     return (
@@ -44,8 +38,7 @@ export default function CreateCharacter () {
         <p> Welcome to Character Creation!</p>
         <form onSubmit = {handleClick}>
         <input value={useName} placeholder='name' type='text' onChange={(event) => setUseName(event.target.value)}/>
-        <input value={useLevel} placeholder='level' type='number' onChange={(event) => setUseLevel(event.target.value)}/>
-        <button>Submit name and level</button>
+        <button>Submit name</button>
         </form>
         <br/>
         <br/>

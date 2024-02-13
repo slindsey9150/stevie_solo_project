@@ -26,7 +26,11 @@ export default function CreateManageCampaigns () {
             fifthColumn='RB'
             dispatchType='FETCH_CAMPAIGNS'
             reducerType='campaigns'
-            reducer='CampaignsReducer'/>
+            reducer='CampaignsReducer'
+            firstRow='level'
+            secondRow='class'
+            thirdRow='name'
+            fourthRow='race'/>
         </div>
         <ButtonRoute
         name='Create Campaign'

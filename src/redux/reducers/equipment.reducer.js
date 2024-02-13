@@ -24,10 +24,20 @@ const equipmentReducer = (state = [], action) => {
             return state;
     }
   }
+  const userEquipment = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_USER_EQUIPMENT':
+            return action.payload;
+            default: 
+            return state;
+    }
+  }
+
 
   export default combineReducers ({
     equipmentReducer,
     equipmentCategoryReducer,
-    equipmentUrl
+    equipmentUrl,
+    userEquipment
 
   })

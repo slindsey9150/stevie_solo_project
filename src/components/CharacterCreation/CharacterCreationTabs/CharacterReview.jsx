@@ -30,6 +30,8 @@ export default function CharacterReview () {
 
         <> This is where you review your character before submitting them to the server</>
         <br/>
+        <>Name: {createReduce.setName}</>
+        <br/>
         <>Race: {createReduce.setRace}</>
         <br/>
         <>Class: {createReduce.setClass}</>

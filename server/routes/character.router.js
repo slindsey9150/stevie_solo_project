@@ -52,12 +52,12 @@ router.post('/', rejectUnauthenticated, (req,res) => {
   const id = req.user.id
   queryText = `INSERT INTO Characters ( "player_id", "name", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
   VALUES
-( $1, $2, $3, $4, $5, $6, $7, $8, $9, true, 1, 1, true, $10, true, $11, 1)`
+( $1, $2, $3, $4, $5, $6, $7, $8, $9, true, 1, 1, true, $10, true, $11, $12)`
 
 const queryParams = [id, character.name, character.level, character.charisma,
                     character.constitution, character.strength, character.dexterity,
                     character.wisdom, character.intelligence, character.backstory,
-                    character.notes]
+                    character.notes, character.race]
  if(req.isAuthenticated()) {
 pool.query(queryText, queryParams)
 .then((results) => {

@@ -27,6 +27,7 @@ const handleDetails = (event) => {
 }
 const editCharacter = () => {
     console.log('editing character');
+    history.push('/editcharacter')
 }
 
 

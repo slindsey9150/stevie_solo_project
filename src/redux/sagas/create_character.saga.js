@@ -13,7 +13,7 @@ function* createCharacter (action) {
         wisdom: action.payload.setAbilityScores[5],
         intelligence: action.payload.setAbilityScores[3],
         class: action.payload.setClass,
-        Race: action.payload.setRace,
+        race: action.payload.setRaceId,
         notes: action.payload.setNotes,
         backstory: action.payload.setBackstory,
         
@@ -31,12 +31,26 @@ function* createCharacter (action) {
 
 }
 
+function* characterLevel (action) {
+    try {
+        const response = yield axios.get(`https://www.dnd5eapi.co${action.classurl}/levels/${action.payload}`)
+        console.log('response', response);
+        yield put ({ type:'CHAR_LEVEL_FILTER', payload: response.data})
+    }
+    catch (error) {
+        console.log('error getting spell url', error);
+    }
+}
+
 
 
 function* createCharacterSaga() {
     yield takeLatest ('CREATE_CHARACTER', createCharacter);
+    yield takeLatest ('SET_CHAR_LEVEL', characterLevel)
  
 }
+
+
 
 export default createCharacterSaga;
 

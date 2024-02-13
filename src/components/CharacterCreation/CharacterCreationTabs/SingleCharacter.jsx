@@ -11,31 +11,30 @@ function SingleCharacter () {
     let singleCharacter = characterstore[storeIndex]
     return (
        <>
-       Edit your Character here
+       View your Character here
        <br/>
-       {singleCharacter?.name}
+       Name: {singleCharacter?.name}
        <br/>
-       {singleCharacter?.race}
+       Race: {singleCharacter?.race}
        <br/>
-       {singleCharacter?.class}
+       Class: {singleCharacter?.class}
        <br/>
-       {singleCharacter?.charisma}
+       Charisma: {singleCharacter?.charisma}
        <br/>
-       {singleCharacter?.constitution}
+       Constitutuion: {singleCharacter?.constitution}
        <br/>
-       {singleCharacter?.dexterity}
+       Dexterity: {singleCharacter?.dexterity}
        <br/>
-       {singleCharacter?.intelligence}
+       Intelligence: {singleCharacter?.intelligence}
        <br/>
-       {singleCharacter?.strength}
+       Strength: {singleCharacter?.strength}
        <br/>
-       {singleCharacter?.wisdom}
+       Wisdom: {singleCharacter?.wisdom}
        <br/>
-       {singleCharacter?.notes}
+       Notes: {singleCharacter?.notes}
        <br/>
-       {singleCharacter?.backstory}
+       Backstory: {singleCharacter?.backstory}
        <br/>
-       {singleCharacter?.name}
        </>
     )
 }

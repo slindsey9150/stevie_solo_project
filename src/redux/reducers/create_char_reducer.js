@@ -17,6 +17,14 @@ const setClass = (state = [], action) => {
         return state
     }
   }
+  const setRaceId = (state = [], action) => {
+    switch (action.type) {
+      case 'SET_RACE_ID':
+        return action.payload
+      default:
+        return state
+    }
+  }
   const setAbilityScores = (state = [], action) => {
     switch (action.type) {
       case 'SET_AS':
@@ -41,6 +49,16 @@ const setClass = (state = [], action) => {
         return state
     }
   }
+
+  const getClassLevel = (state = [], action) => {
+    switch (action.type) {
+      case 'CHAR_LEVEL_FILTER':
+        return action.payload
+      default:
+        return state
+    }
+  }
+
   const setBackstory = (state = [], action) => {
     switch (action.type) {
       case 'SET_BACKSTORY':
@@ -74,6 +92,8 @@ const setClass = (state = [], action) => {
     setLevel,
     setBackstory,
     setNotes,
-    setBackground
+    setBackground,
+    setRaceId,
+    getClassLevel
 
   })

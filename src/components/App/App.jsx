@@ -37,7 +37,7 @@ import RuleCategory from '../AllRules/RuleCategory/RuleCategory'
 import EquipmentPage from '../AllEquipment/EquipmentPage/EquipmentCategoriesPage'
 import EquipmentCategory from '../AllEquipment/EquipmentCategory/EquipmentCategoryPage'
 import SpellsPage from '../AllSpells/SpellsPage/SpellsPage'
-import ViewCharacter from '../CharacterCreation/ViewCharacter';
+import EditCharacter from '../CharacterCreation/EditCharacter';
 import './App.css';
 
 
@@ -118,9 +118,9 @@ function App() {
           <ProtectedRoute
             // logged in shows Campaigns else shows LoginPage
             exact
-            path="/viewcharacter"
+            path="/editcharacter"
           >
-            <ViewCharacter/>
+            <EditCharacter/>
           </ProtectedRoute>
           <ProtectedRoute
             // logged in shows Campaigns else shows LoginPage
