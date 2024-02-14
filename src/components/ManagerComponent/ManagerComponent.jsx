@@ -24,6 +24,7 @@ const handleDetails = (event) => {
     const rowDeets = event.target.closest('tr')
     // console.log('clicked a row', rowDeets.id);
     dispatch({type:'SET_SINGLE', payload:rowDeets.id})
+    dispatch({type:'FETCH_INVENTORY', payload:rowDeets.id})
 }
 const editCharacter = () => {
     console.log('editing character');

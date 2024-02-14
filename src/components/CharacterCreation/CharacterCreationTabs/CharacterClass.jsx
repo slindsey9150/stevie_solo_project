@@ -10,6 +10,8 @@ import SingleItem from '../../AllEquipment/SingleItem/SingleItem'
 import ChooseLevel from './ChooseLevel'
 export default function CharacterClass() {
     const classLevel = useSelector(store => store.createchars.getClassLevel)
+    const characterLevel = useSelector(store => store.createchars.setLevel)
+    console.log('character level', characterLevel);
     // console.log('Create Character', characterCreation);
 console.log('class level', classLevel);
     const dispatch = useDispatch()
@@ -49,13 +51,22 @@ let [yourUrl, setYourUrl] = useState('')
         dispatch({type:'SET_CLASS', payload:yourClass})
     }
 
+    let sendLevel = 1
     const handleClick = (event) => {
         setYourClass(event.target.closest('button').textContent)
         setYourUrl(event.target.closest('button').id)
         console.log('your url', yourUrl);
+        console.log('Class Level', classLevel);
         dispatch({type:'RULE_URL', payload:yourUrl})
-        dispatch({type:'SET_CHAR_LEVEL', payload: 1, classurl: yourUrl})
-        dispatch({type:'SET_LEVEL', payload:1})
+        if (characterLevel == '') {
+            sendLevel = 1
+        }
+        else {
+            sendLevel = characterLevel
+        }
+        
+        dispatch({type:'SET_CHAR_LEVEL', payload: sendLevel, classurl: yourUrl})
+        dispatch({type:'SET_LEVEL', payload: sendLevel})
 
         
 

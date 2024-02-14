@@ -18,6 +18,15 @@ const CharactersReducer = (state = [], action) => {
       return state;
   }
 };
+
+const CharacterEquipment = (state = [], action) => {
+  switch(action.type) {
+    case 'SET_INVENTORY':
+      return action.payload;
+      default:
+        return state;
+  }
+}
  
   
 
@@ -25,5 +34,6 @@ const CharactersReducer = (state = [], action) => {
 
   export default combineReducers ({
    CharactersReducer,
-   SingleCharacter
+   SingleCharacter,
+   CharacterEquipment
   })

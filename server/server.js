@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const dndRouter = require('./routes/dnd.router')
 const charRouter = require('./routes/character.router')
 const campRouter = require('./routes/campaigns.router')
+const equipmentRouter = require('./routes/character.equipment')
 // Express Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -31,6 +32,7 @@ app.use('/api/spells', dndRouter);
 app.use('/api/equipment', dndRouter);
 app.use('/api/characters', charRouter);
 app.use('/api/campaigns', campRouter)
+app.use('/api/inventory', equipmentRouter)
 
 // Listen Server & Port
 app.listen(PORT, () => {
