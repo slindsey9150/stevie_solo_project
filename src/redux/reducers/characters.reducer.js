@@ -27,6 +27,21 @@ const CharacterEquipment = (state = [], action) => {
         return state;
   }
 }
+
+const editCharacter = (state  = {}, action) => {
+  if(action.type === 'SET_EDIT_CHAR') {
+      // action.payload is the object from the DB
+      return action.payload;
+  }else if(action.type === 'EDIT_ONCHANGE') {
+  return {
+      // spread: give me all of the object (...state)
+      ...state,
+      // change this one in particular
+      [action.payload.property]: action.payload.value,
+  }
+}
+  return state;
+}
  
   
 
@@ -35,5 +50,6 @@ const CharacterEquipment = (state = [], action) => {
   export default combineReducers ({
    CharactersReducer,
    SingleCharacter,
-   CharacterEquipment
+   CharacterEquipment,
+   editCharacter
   })

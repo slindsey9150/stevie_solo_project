@@ -52,18 +52,18 @@ function SingleRule(props) {
         firstValueLable = 'class name: '
         firstValue = rule.name;
         secondValue = `Hit Die: ${rule.hit_die}`
-        thirdValue = rule.proficiencies?.map((proficiency) => {
+        thirdValue = rule.proficiencies?.map((proficiency, i) => {
             return (
-                <>
+                <div key ={i}>
                     <>{proficiency.name}, </>
-                </>
+                </div>
             )
         }
         )
         thirdValueLable = 'proficiencies:'
-        fourthValue = rule.starting_equipment?.map((equipment) => {
+        fourthValue = rule.starting_equipment?.map((equipment, i) => {
             return (
-                <> {equipment.equipment.name}|</>
+                <p key ={i}> {equipment.equipment.name}|</p>
             )
         })
         fourthValueLable = 'starting equipment:'
@@ -71,33 +71,33 @@ function SingleRule(props) {
 
 
         fifthValue = <>
-            {rule.starting_equipment_options?.map((choice) => {
+            {rule.starting_equipment_options?.map((choice, i) => {
                 return (
-                    <div>
+                    <div key ={i}>
                         <p>
                             choose: {choice.choose}
-                            {choice.desc} {choice?.from?.options?.map((object) => {
+                            {choice.desc} {choice?.from?.options?.map((object, i) => {
                                 if (object.of) {
                                     return (
-                                        <><button onClick={getItem} id={object?.of?.url} >{object?.of?.name}</button></>
+                                        <button key ={i} onClick={getItem} id={object?.of?.url} >{object?.of?.name}</button>
                                     )
                                 }
                                 else if (object.choice) {
                                     return (
-                                        <><button onClick={getItem} id={object?.choice?.from?.equipment_category?.url} >{object?.choice?.from?.equipment_category?.name}</button></>
+                                        <button key ={i} onClick={getItem} id={object?.choice?.from?.equipment_category?.url} >{object?.choice?.from?.equipment_category?.name}</button>
                                     )
                                 }
                                 else if (object.items) {
                                     return (
-                                        <> {object?.items?.map((item) => {
+                                        <> {object?.items?.map((item, i) => {
                                             if (item.choice) {
                                                 return (
-                                                    <><button onClick={getItem} id={item.choice.from.equipment_category.url} >{item.choice.from.equipment_category.name}</button></>
+                                                    <button key ={i} onClick={getItem} id={item.choice.from.equipment_category.url} >{item.choice.from.equipment_category.name}</button>
                                                 )
                                             }
                                             else if (item.of) {
                                                 return (
-                                                    <><button onClick={getItem} id={item.of.url} >{item.of.name}</button></>
+                                                    <button key ={i} onClick={getItem} id={item.of.url} >{item.of.name}</button>
                                                 )
                                             }
                                         })}</>

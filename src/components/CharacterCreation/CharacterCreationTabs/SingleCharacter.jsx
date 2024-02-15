@@ -1,14 +1,26 @@
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 function SingleCharacter () {
+    const dispatch = useDispatch()
+    const history = useHistory()
     const characterstore = useSelector(store => store.characters.CharactersReducer)
     const singleStore = useSelector(store => store.characters.SingleCharacter)
-    console.log('singleStore', singleStore);
+    // console.log('singleStore', singleStore);
 //    console.log( characterstore?.findIndex(x => x.charid == singleStore))
     let storeIndex = characterstore?.findIndex(x => x.charid == singleStore)
-    console.log('store index', storeIndex);
+    // console.log('store index', storeIndex);
     console.log('character', characterstore[storeIndex]);
     let singleCharacter = characterstore[storeIndex]
+
+    const editCharacter = () => {
+    dispatch({type:'GET_EDIT_CHAR', payload: singleCharacter})
+
+    history.push('/editcharacter')
+}
+
+
     return (
        <>
        View your Character here
@@ -35,6 +47,8 @@ function SingleCharacter () {
        <br/>
        Backstory: {singleCharacter?.backstory}
        <br/>
+       <button onClick = {editCharacter}>EDIT ✏️</button>
+
        </>
     )
 }

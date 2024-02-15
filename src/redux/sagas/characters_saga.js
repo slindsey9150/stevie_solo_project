@@ -40,6 +40,25 @@ function* getInventory  (action) {
         console.log('error getting characters', error);
     }
 }
+function* getSingle  (action) {
+    try {
+        const singleNumber = action.payload
+        yield put({ type: 'SET_SINGLE', payload: singleNumber });
+    }
+    catch (error) {
+        console.log('error getting characters', error);
+    }
+}
+function* getEditChar  (action) {
+    try {
+        console.log('edit char', action.payload);
+       
+        yield put({ type: 'SET_EDIT_CHAR', payload: action.payload });
+    }
+    catch (error) {
+        console.log('error getting single character', error);
+    }
+}
 
 
 
@@ -47,6 +66,9 @@ function* charactersSaga() {
     yield takeLatest ('FETCH_CHARACTERS', getCharacters);
     yield takeLatest ('DELETE_CHARACTER', deleteCharacter);
     yield takeLatest ('FETCH_INVENTORY', getInventory)
+    yield takeLatest ('THIS_IS_SINGLE', getSingle)
+    yield takeLatest('GET_EDIT_CHAR', getEditChar)
+    
     // yield takeLatest ('SINGLE_CHARACTER', singleCharacter)
 
 

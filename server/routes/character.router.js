@@ -77,9 +77,11 @@ router.delete('/:id', rejectUnauthenticated, (req,res) => {
 const characterId = req.params.id
 
 const queryParams = [characterId]
-const queryText = `
+const queryText = 
+`
 DELETE FROM characters 
-WHERE id = $1
+WHERE id = $1;
+
 `
   if(req.isAuthenticated()) {
     pool.query(queryText,queryParams)
@@ -92,5 +94,21 @@ WHERE id = $1
     })
   }
 })
+
+router.put('/:id', (req, res) => {
+  // Update this single student
+  const idToUpdate = req.params.id;
+  console.log('req.body.name', req.body.name);
+  const sqlText = `UPDATE characters SET name = $1 WHERE id = $2`;
+
+  pool.query(sqlText, [req.body.name, idToUpdate])
+      .then((result) => {
+          res.sendStatus(200);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500);
+      });
+});
 
 module.exports = router;

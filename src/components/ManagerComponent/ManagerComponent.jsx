@@ -4,6 +4,14 @@ import { useHistory
  } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function ManagerComponent(props) {
+    const characterstore = useSelector(store => store.characters.CharactersReducer)
+    const singleStore = useSelector(store => store.characters.SingleCharacter)
+    let storeIndex = characterstore?.findIndex(x => x.charid == singleStore)
+    let singleCharacter= characterstore[storeIndex]
+
+    // let singleCharacter = {}
+    // console.log('single character', singleCharacter);
+
 const dispatch = useDispatch()
 const history = useHistory()
 const reducer = useSelector(store => store[props.reducerType])
@@ -17,19 +25,18 @@ const getData = () => {
     dispatch({type:`${props.dispatchType}`})
 }
 const data = useReducer
-// console.log('character name', useReducer[0]?.name);
-// console.log('dataa:', data);
 
-const handleDetails = (event) => {
+
+const RenderStores = (event) => {
     const rowDeets = event.target.closest('tr')
     // console.log('clicked a row', rowDeets.id);
     dispatch({type:'SET_SINGLE', payload:rowDeets.id})
     dispatch({type:'FETCH_INVENTORY', payload:rowDeets.id})
+    // console.log('single character', singleCharacter);
+
 }
-const editCharacter = () => {
-    console.log('editing character');
-    history.push('/editcharacter')
-}
+
+
 
 
     return (
@@ -44,19 +51,17 @@ const editCharacter = () => {
                         <th>{props.thirdColumn}</th>
                         <th>{props.fourthColumn}</th>
                         <th>{props.fifthColumn}</th>
-                        <th>{props.sixthColumn}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {/* this portion of the table will fill dynamically with character info */}
                     {data?.map((row, i) => {return (
-                        <tr id={row[props.keyProp]} key={row[props.keyProp]}>
-                            <td onClick={(event) => {handleDetails(event)}}>{row[props.firstRow]}</td>
-                            <td onClick={(event) => {handleDetails(event)}}>{row[props.secondRow]}</td>
-                            <td onClick={(event) => {handleDetails(event)}}>{row[props.thirdRow]}</td>
-                            <td onClick={(event) => {handleDetails(event)}}>{row[props.fourthRow]}</td>
-                            <td onClick={(event) => {handleDetails(event)}}>{row.level}</td>
-                            <td><button onClick={editCharacter}>EDIT ✏️</button></td>
+                        <tr onClick={(event) => {RenderStores(event)}} id={row[props.keyProp]} key={row[props.keyProp]}>
+                            <td>{row[props.firstRow]}</td>
+                            <td>{row[props.secondRow]}</td>
+                            <td>{row[props.thirdRow]}</td>
+                            <td>{row[props.fourthRow]}</td>
+                            <td >{row.level}</td>
                             </tr>
                     )})}
                 </tbody>

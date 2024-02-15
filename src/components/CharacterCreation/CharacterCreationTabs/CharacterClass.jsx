@@ -11,6 +11,7 @@ import ChooseLevel from './ChooseLevel'
 export default function CharacterClass() {
     const classLevel = useSelector(store => store.createchars.getClassLevel)
     const characterLevel = useSelector(store => store.createchars.setLevel)
+    const itemReducer = useSelector(store => store.equipment.equipmentUrl)
     console.log('character level', characterLevel);
     // console.log('Create Character', characterCreation);
 console.log('class level', classLevel);
@@ -64,13 +65,14 @@ let [yourUrl, setYourUrl] = useState('')
         else {
             sendLevel = characterLevel
         }
-        
         dispatch({type:'SET_CHAR_LEVEL', payload: sendLevel, classurl: yourUrl})
         dispatch({type:'SET_LEVEL', payload: sendLevel})
-
-        
-
     }
+    const addToInv = () => {
+        console.log('adding to inventory', itemReducer.name);
+        dispatch({type:'SET_EQUIPMENT', payload: itemReducer.name, newItem: 'item'})
+    }
+
     return (
         <>
         <NavCharacter/>
@@ -107,6 +109,9 @@ let [yourUrl, setYourUrl] = useState('')
                 
             </tbody>
         </table>
+        <div>
+            <p>Would you like to add {itemReducer?.name} to your inventory? <button onClick={addToInv} >YES</button></p>
+        </div>
 
         <div>
             Here we will show information about each class

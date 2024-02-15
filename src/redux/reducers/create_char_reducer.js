@@ -83,6 +83,17 @@ const setClass = (state = [], action) => {
         return state
     }
   }
+  const setEquipment = (state = [], action) => {
+    const realNewItem = action.payload
+    const newItem = action.newItem
+    switch (action.type) {
+      case 'SET_EQUIPMENT':
+        return {...state,
+          [newItem]: realNewItem}
+      default:
+        return state
+    }
+  }
 
   export default combineReducers({
     setClass,
@@ -94,6 +105,7 @@ const setClass = (state = [], action) => {
     setNotes,
     setBackground,
     setRaceId,
-    getClassLevel
+    getClassLevel,
+    setEquipment
 
   })

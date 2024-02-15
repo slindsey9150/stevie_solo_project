@@ -29,6 +29,8 @@ export default function SingleItem () {
                 <>This is a weapon</>
                 <p><b>Name</b></p>
                 <p>{itemReducer.name}</p>
+                <p><b>Damage</b></p>
+                <p>{itemReducer.damage.damage_dice} {itemReducer.damage.damage_type.name}</p>
                 <p><b>Range Category</b></p>
                 <p>{itemReducer.category_range}</p>
                 <p><b>Range</b></p>
