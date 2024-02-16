@@ -8,7 +8,7 @@ export default function HomeScreenRoute (props) {
         history.push(props.route)
     }
     return (
-        <div>This will be a route on the home screen
+        <div>
             <button onClick={handleClick}>{props.text}</button>
         </div>
     )

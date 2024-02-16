@@ -99,9 +99,42 @@ router.put('/:id', (req, res) => {
   // Update this single student
   const idToUpdate = req.params.id;
   console.log('req.body.name', req.body.name);
-  const sqlText = `UPDATE characters SET name = $1 WHERE id = $2`;
+  console.log(' value', req.body.editCharacter[req.body.editCriteria]);
+  console.log('edit criteria', req.body.editCriteria);
+  console.log('req.body', req.body);
+  console.log('id to update', idToUpdate)
+  console.log();
+  let sqlText = ``;
+  if (req.body.editCriteria == 'name') {
+    sqlText = `UPDATE "characters" SET name = $1 WHERE id = $2`;
+  }
+  else if (req.body.editCriteria == 'race') {
+    sqlText= `UPDATE "characters" SET race = $1 WHERE id = $2`;
+  }
+  else if (req.body.editCriteria == 'class') {
+    sqlText= `UPDATE "characters" SET class = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'charisma') {
+    sqlText= `UPDATE "characters" SET charisma = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'constitution') {
+    sqlText= `UPDATE "characters" SET constitution = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'dexterity') {
+    sqlText= `UPDATE "characters" SET dexterity = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'intelligence') {
+    sqlText= `UPDATE "characters" SET intelligence = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'strength') {
+    sqlText= `UPDATE "characters" SET strength = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'wisdom') {
+    sqlText= `UPDATE "characters" SET wisdom = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'notes') {
+    sqlText= `UPDATE "characters" SET notes = $1 WHERE id = $2`;
+  }else if (req.body.editCriteria == 'backstory') {
+    sqlText= `UPDATE "characters" SET backstory = $1 WHERE id = $2`;
+  }
+ 
 
-  pool.query(sqlText, [req.body.name, idToUpdate])
+const queryParams = [req.body.editCharacter[req.body.editCriteria], idToUpdate]
+console.log('query params', queryParams)
+  pool.query(sqlText, queryParams)
       .then((result) => {
           res.sendStatus(200);
       })

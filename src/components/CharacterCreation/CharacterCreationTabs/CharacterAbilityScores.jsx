@@ -16,19 +16,19 @@ export default function CharacterAbilityScores() {
     let [yourWis, setyourWis] = useState()
     let [yourInt, setyourInt] = useState()
     const dispatch = useDispatch([])
-    let BtnRpt = (props) => {
-        const handleClick = (event) => {
-            console.log('all Scores');
-            console.table( allScores);
-            console.log('number entered', event.target.closest('InpRpt'));
-            console.log('State Name', props.stateName);
-            // {props.stateName}(event.target.closest('input').textContent)
+    // let BtnRpt = (props) => {
+    //     const handleClick = (event) => {
+    //         console.log('all Scores');
+    //         console.table( allScores);
+    //         console.log('number entered', event.target.closest('InpRpt'));
+    //         console.log('State Name', props.stateName);
+    //         // {props.stateName}(event.target.closest('input').textContent)
             
-         }
-        return (
-            <button onClick ={handleClick}>{props.name}</button>
-        )
-    }
+    //      }
+    //     return (
+    //         <button onClick ={handleClick}>{props.name}</button>
+    //     )
+    // }
     let InpRpt = (props) => {
         let onChangeFun;
         if (props.stateName === 'Cha'){
@@ -115,14 +115,14 @@ export default function CharacterAbilityScores() {
                 
             </thead>
             
-      
+      -
             <tbody>
-                <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/><BtnRpt stateName='setyourCha' name='Confirm Score'/></td>
-                <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/><BtnRpt stateName='setyourConst' name='Confirm Score'/></td>
-                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/><BtnRpt stateName='setyourDex' name='Confirm Score'/></td></tr>
-                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/><BtnRpt stateName='setyourInt' name='Confirm Score'/></td>
-                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br><BtnRpt stateName='setyourStr' name='Confirm Score'/></td>
-                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br><BtnRpt stateName='setyourWis' name='Confirm Score'/></td></tr>
+                <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/></td>
+                <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/></td>
+                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/></td></tr>
+                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/></td>
+                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br></td>
+                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br></td></tr>
                 
             </tbody>
         </table>

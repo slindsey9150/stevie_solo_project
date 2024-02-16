@@ -43,6 +43,13 @@
             background-color:#fffaf6;
             align-items: center;
         }
+        .BtnRpt:hover {
+            color: #fffaf6;
+            background-color: #8B4513;
+            border: none;
+            cursor: pointer;
+            outline: 0;
+        }
         .yourClass {
             font-family: 'Garamond', serif;
             font-size:x-large;
@@ -56,3 +63,45 @@
             font-family: 'Garamond', serif;
             font-size:x-large;
         }
+
+        .levelChooser{
+            font-family: 'Garamond', serif;
+            background-color: #D2B48C;
+            color:#8B4513;
+
+            border-collapse: collapse;
+            border: 3px solid #8B4513; /* Brown border */
+            margin: 20px auto;
+            text-align: center;
+            width: 15%;
+            position: relative;
+            left: 10%;
+            top: 5%;
+            transform: translate(-50%, -0%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .levelFilter {
+            background-color:#fffaf6;
+            color:#8B4513;
+        }
+        .levelFilter:hover{
+            background-color:#8B4513;
+            color:#fffaf6;
+            cursor: pointer;
+            outline: 0;
+        }
+
+        .SingleItemClass {
+            font-family: 'Garamond', serif;
+            width: 400px; /* Set desired width */
+            height: 400px; /* Set desired height */
+            position:relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-10%, -0%);
+
+        }
+
+
+      

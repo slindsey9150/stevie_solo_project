@@ -7,6 +7,7 @@ function SingleCharacter () {
     const history = useHistory()
     const characterstore = useSelector(store => store.characters.CharactersReducer)
     const singleStore = useSelector(store => store.characters.SingleCharacter)
+    const editStore = useSelector(store => store.characters.editCharacter)
     // console.log('singleStore', singleStore);
 //    console.log( characterstore?.findIndex(x => x.charid == singleStore))
     let storeIndex = characterstore?.findIndex(x => x.charid == singleStore)
@@ -19,6 +20,12 @@ function SingleCharacter () {
 
     history.push('/editcharacter')
 }
+if (singleStore == 0) {
+    return <></>
+}
+else {
+
+
 
 
     return (
@@ -51,6 +58,7 @@ function SingleCharacter () {
 
        </>
     )
+}
 }
 
 export default SingleCharacter

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-
+import './CSS FOLDER/CharacterClass.css'
 
 const ChooseLevel = (props) => {
 
@@ -16,10 +16,10 @@ const ChooseLevel = (props) => {
     }
 
     return (
-        <div>
+        <div className="levelChooser">
             <label>
                 Choose Your Level
-                <select  onChange={(event) => { handleChange(event) }}>
+                <select className="levelFilter"  onChange={(event) => { handleChange(event) }}>
 
                     <option value= {1} >Level 1</option>
 

@@ -9,9 +9,11 @@
     top: 10%;
     transform: translate(-50%, -10%);
 
-    margin: 0 0 30px; 
-    background-color: #00acb0;
+    margin: 0 0 10px; 
+    background-color: #D2B48C;
     overflow: hidden;
+    border: 2px solid #8B4513; /* Brown border bottom */
+
   }
   
   .NavCharacter a {
@@ -27,9 +29,11 @@
   }
   
   .NavCharacterLink {
+    font-family: 'Garamond', serif;
+
     display: inline-block;
-    color: #f2f2f2;
-    background-color: #00acb0;
+    color: #8B4513;
+    background-color: #FFF8DC;
     text-align: center;
     padding: 24px 10px;
     text-decoration: none;
@@ -43,6 +47,7 @@
   }
   
   .NavCharacterLink:hover {
-    background-color: #008183;
+    background-color: #8B4513;
+    color:  #FFF8DC;
   }
   

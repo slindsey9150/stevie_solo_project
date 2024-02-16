@@ -34,7 +34,7 @@ export default function CreateCharacter () {
         <br/>
         <br/>
 
-        <>This is where you'll Create a Character</>
+        {/* <>This is where you'll Create a Character</> */}
         <p> Welcome to Character Creation!</p>
         <form onSubmit = {handleClick}>
         <input value={useName} placeholder='name' type='text' onChange={(event) => setUseName(event.target.value)}/>

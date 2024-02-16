@@ -6,6 +6,8 @@ export default function DeleteCharacter () {
     const handleDelete = (characterId) => {
         // console.log('delete button clicked', characterId);
         dispatch({type:'DELETE_CHARACTER', payload: characterId})
+        dispatch({type:'FETCH_CHARACTERS'})
+
     }
     const dispatch = useDispatch()
     const store = useSelector(store => store.characters)

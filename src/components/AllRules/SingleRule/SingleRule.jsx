@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import SingleItem from '../../AllEquipment/SingleItem/SingleItem';
-
+import "./SingleRule.css"
 let firstValueLable = ' '
 let firstValue = ' '
 let secondValueLable = ''
@@ -49,9 +49,10 @@ function SingleRule(props) {
 
     }
     if (classUrl === '/api/classes/') {
-        firstValueLable = 'class name: '
+        firstValueLable = 'Class Name: '
         firstValue = rule.name;
-        secondValue = `Hit Die: ${rule.hit_die}`
+        secondValue = rule.hit_die
+        secondValueLable='Hit Die:'
         thirdValue = rule.proficiencies?.map((proficiency, i) => {
             return (
                 <div key ={i}>
@@ -71,7 +72,7 @@ function SingleRule(props) {
 
 
         fifthValue = <>
-            {rule.starting_equipment_options?.map((choice, i) => {
+            {/* {rule.starting_equipment_options?.map((choice, i) => {
                 return (
                     <div key ={i}>
                         <p>
@@ -110,10 +111,10 @@ function SingleRule(props) {
                     </div>
 
                 )
-            })}
-            <SingleItem />
+            })} */}
+            
         </>
-        fifthValueLable = 'starting equipment options: '
+        // fifthValueLable = 'starting equipment options: '
 
 
 
@@ -231,33 +232,22 @@ function SingleRule(props) {
 
 
     return (
-        <div key={ruleKey}>
-            <>{firstValueLable}</>
-            <>{firstValue}</>
-            <br />
-            <> {secondValueLable}</>
-            <>{secondValue}</>
-            <br />
-            <>{thirdValueLable}</>
-            <br />
-            <>{thirdValue}</>
-            <br />
-            <>{fourthValueLable}</>
-            <br />
-            <>{fourthValue}</>
-            <br />
-            <>{fifthValueLable}</>
-            <>{fifthValue}</>
+        <div className ="SingleRuleDiv" key={ruleKey}>
+            <p><b>{firstValueLable}</b><span>{firstValue}</span></p>
+            <p> {secondValueLable} <span>{secondValue}</span></p>
+            
+            <p>{thirdValueLable} <span>{thirdValue}</span></p>
+            
+            <p>{fourthValueLable}</p>
+            <p>{fourthValue}</p>
+            <p>{fifthValueLable}</p>
+            <p>{fifthValue}</p>
 
-            <br />
-            <>{sixthValueLable}</>
-            <>{sixthValue}</>
-            <br />
-            <>{seventhValue}</>
-            <br />
-            <>{eigthValue}</>
-            <br />
-            <>{ninthValue}</>
+            <p>{sixthValueLable}</p>
+            <p>{sixthValue}</p>
+            <p>{seventhValue}</p>
+            <p>{eigthValue}</p>
+            <p>{ninthValue}</p>
         </div>
     )
 

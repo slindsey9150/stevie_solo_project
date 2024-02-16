@@ -19,12 +19,11 @@ export default function CharacterDescription() {
         dispatch ({type:'SET_NOTES', payload:useNotes})
 
     }
-
-    let BtnRpt = (props) => {
-        return (
-            <button onClick = {(event) => {handleClick(event)}}>{props.name}</button>
-        )
-    }
+    // let BtnRpt = (props) => {
+    //     return (
+    //         <button onClick = {(event) => {handleClick(event)}}>{props.name}</button>
+    //     )
+    // }
     let FilterComp = () => {
         return (
             <div>

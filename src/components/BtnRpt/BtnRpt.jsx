@@ -1,3 +1,5 @@
+import "../CharacterCreation/CharacterCreationTabs/CSS FOLDER/CharacterClass.css"
+
 let allScores = [{charisma:{yourCha}},{constitution:{yourConst}},{dexterity:{yourDex}},
     {intelligence:{yourInt}},{strength:{yourStr}},{wisdom:{yourWis}}]
     
@@ -11,7 +13,7 @@ let BtnRpt = (props) => {
         
      }
     return (
-        <button onClick ={handleClick}>{props.name}</button>
+        <button className="classLinkBtn" onClick ={handleClick}>{props.name}</button>
     )
 }
 

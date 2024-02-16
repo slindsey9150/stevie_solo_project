@@ -110,18 +110,21 @@ let [yourUrl, setYourUrl] = useState('')
             </tbody>
         </table>
         <div>
-            <p>Would you like to add {itemReducer?.name} to your inventory? <button onClick={addToInv} >YES</button></p>
+            {/* <p>Would you like to add {itemReducer?.name} to your inventory? <button onClick={addToInv} >YES</button></p> */}
         </div>
 
         <div>
-            Here we will show information about each class
+            {/* Here we will show information about each class */}
             <p>Here we will show level specific information about each class</p>
             <div>
                 {classlevelonelable}: {classlevelone.cantrips_known} {classlevelone.spell_slots_level_1} {classlevelone.spell_slots_level_2} {classlevelone.spell_slots_level_3}
             </div>
             <br/>
-            Here we will display level specific information about each class
+            {/* Here we will display level specific information about each class */}
             <SingleRule/>
+            <div className="SingleItemClass">
+            {/* <SingleItem/> */}
+            </div>
         </div>
 
         </>

@@ -1,0 +1,12 @@
+.SingleRuleDiv {
+    font-family: 'Garamond', serif;
+    width: 400px; /* Set desired width */
+    height: 400px; /* Set desired height */
+    overflow: auto; /* or overflow: hidden; or overflow: scroll; depending on your needs */
+    position:relative;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -0%);
+    color: #8B4513; /* Brown text color */
+    background-color: #FFEFD5; /* Papaya Whip background */
+}

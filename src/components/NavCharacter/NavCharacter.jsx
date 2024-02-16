@@ -10,6 +10,8 @@ function NavCharacter() {
 
   return (
     <div className="NavCharacter">
+                <BackButton/>
+
         <Link to='/createcharacter'>
         <h2 className="NavCharacter-title">Create a Character</h2>
         </Link>
@@ -17,7 +19,6 @@ function NavCharacter() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-          <BackButton/>
             <Link className="NavCharacterLink" to="/characterclass">
               Class
             </Link>
@@ -30,9 +31,9 @@ function NavCharacter() {
             <Link className="NavCharacterLink" to="/characterdescription">
               Description
             </Link>
-            <Link className="NavCharacterLink" to="/characterequipment">
+            {/* <Link className="NavCharacterLink" to="/characterequipment">
              Equipment
-            </Link>
+            </Link> */}
             <Link className="NavCharacterLink" to="/characterreview">
              Review Character
             </Link>

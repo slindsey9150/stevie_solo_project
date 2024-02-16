@@ -1,0 +1,19 @@
+
+.navLinkBack {
+    display: inline-block;
+    color: #8B4513;
+    background-color: #FFF8DC;
+    text-align: center;
+    padding: 24px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+    font-family: 'Garamond', serif;
+
+}
+.navLinkBack:hover {
+    background-color: #8B4513;
+    color: #FFF8DC;
+}

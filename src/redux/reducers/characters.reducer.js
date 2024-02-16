@@ -11,12 +11,14 @@ const CharactersReducer = (state = [], action) => {
   };
 
   const SingleCharacter = (state= [], action) => {
-    switch(action.type) {
-    case 'SET_SINGLE':
+    if (action.type ==='SET_SINGLE'){
       return action.payload;
-      default: 
+    }
+    else if (action.type ==='SINGLE_CLEAR'){
+      return [];
+    }
       return state;
-  }
+  
 };
 
 const CharacterEquipment = (state = [], action) => {
@@ -39,6 +41,9 @@ const editCharacter = (state  = {}, action) => {
       // change this one in particular
       [action.payload.property]: action.payload.value,
   }
+}
+else if (action.type === 'EDIT_CLEAR') {
+  return {}
 }
   return state;
 }
