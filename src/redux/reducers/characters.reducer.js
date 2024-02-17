@@ -30,7 +30,7 @@ const CharacterEquipment = (state = [], action) => {
   }
 }
 
-const editCharacter = (state  = {}, action) => {
+const editCharacter = (state  = [], action) => {
   if(action.type === 'SET_EDIT_CHAR') {
       // action.payload is the object from the DB
       return action.payload;
@@ -43,7 +43,7 @@ const editCharacter = (state  = {}, action) => {
   }
 }
 else if (action.type === 'EDIT_CLEAR') {
-  return {}
+  return []
 }
   return state;
 }

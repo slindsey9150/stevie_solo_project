@@ -4,6 +4,8 @@ import axios from 'axios';
 import BackButton from "../BackButton/BackButton";
 import { useState } from "react";
 import EditInput from "./EditInput";
+// import EditCharacterShowNew from "./CharacterCreationTabs/EditCharacterShowNew";
+
 export default function EditCharacter() {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -23,17 +25,29 @@ export default function EditCharacter() {
                     payload: { property: [editCriteria], value: Number(event.target.value) }
                 });
             }
+     const handleChangeText = (event) => {
+                dispatch ({
+                    type: 'EDIT_ONCHANGE',
+                    payload: {property: [editCriteria], value: (event.target.value) }
+                })
+            }
     const handleSubmit = (event) => {
         event.preventDefault()
 
     axios.put(`/api/characters/${singleCharacter?.charid}`, {editCharacter, editCriteria})
     .then( response => {
+        // editCriteria= ('')
+        setEditCriteria(undefined)
+        console.log('edit criteria', editCriteria);
+        dispatch({type: 'FETCH_CHARACTERS'})
+
         // refresh will happen with useEffect on Home
     })
     .catch(error => {
         console.log('error on PUT: ', error);
     })
         console.log('submitting form');
+      
     }
     const handleFinishEdit = () => {
         console.log('done editing');
@@ -99,10 +113,13 @@ export default function EditCharacter() {
         onSubmit= {handleSubmit}
         type= {inputType}
         onChange = {(event) => handleChange(event)}
+        textOnChange = {(event) => handleChangeText(event)}
         compLabel = {editCriteria}
         compDefValue = {singleCharacter?.[editCriteria]}
         editCriteria={editCriteria}/>
             <button onClick={handleFinishEdit}>Finish Changing Character</button>
+            {/* <EditCharacterShowNew/> */}
         </>
+
     )
 }
