@@ -13,6 +13,19 @@ const EditInput = (props) => {
     }
     else if (props.editCriteria == 'backstory'){
         console.log('clicking backstory');
+        return (
+
+            <form onSubmit = {props.onSubmit}>
+            <label>
+            {props.compLabel}
+        <input type='text' onChange = {props.textOnChange}
+        defaultValue = {props.compDefValue}>
+        </input>
+        </label>
+        <button>Submit Changes</button>
+        </form>
+
+        )
     }
     else if (props.editCriteria == 'notes'){
         console.log('clicking notes');
@@ -32,6 +45,19 @@ const EditInput = (props) => {
     }
     else if (props.editCriteria == 'name'){
         console.log('clicking name');
+        return (
+
+            <form onSubmit = {props.onSubmit}>
+            <label>
+            {props.compLabel}
+        <input type='text' onChange = {props.textOnChange}
+        defaultValue = {props.compDefValue}>
+        </input>
+        </label>
+        <button>Submit Changes</button>
+        </form>
+
+        )
     }
     else if (props.editCriteria == 'charisma' || 'constitution' || 'dexterity' || 'intelligence' || 'strength' || 'wisdom'){
         console.log('editCriteria is an AS', props.editCriteria);

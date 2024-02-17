@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
-// import InpRpt from "../../InpRpt/InpRpt"
+import InpRpt from "../../InpRpt/InpRpt"
 
 
 export default function CharacterAbilityScores() {
@@ -29,50 +29,50 @@ export default function CharacterAbilityScores() {
     //         <button onClick ={handleClick}>{props.name}</button>
     //     )
     // }
-    let InpRpt = (props) => {
-        let onChangeFun;
-        if (props.stateName === 'Cha'){
-            onChangeFun= (
-              (event) =>  {setyourCha( event.target.value)}
-            )
-        }
-        if (props.stateName === 'Dex'){
-            onChangeFun= (
-              (event) =>  {setyourDex( event.target.value)}
-            )
-        }
-        if (props.stateName === 'Const'){
-            onChangeFun= (
-              (event) =>  {setyourConst( event.target.value)}
-            )
-        }
-        if (props.stateName === 'Int'){
-            onChangeFun= (
-              (event) =>  {setyourInt( event.target.value)}
-            )
-        }
-        if (props.stateName === 'Str'){
-            onChangeFun= (
-              (event) =>  {setyourStr( event.target.value)}
-            )
-        }
-        if (props.stateName === 'Wis'){
-            onChangeFun= (
-              (event) =>  {setyourWis( event.target.value)}
-            )
-        }
-        return (
-            <>
-            <>{props.name}</>
-            <input 
-            onChange={onChangeFun}
-            placeholder = {props.name}
-            value={props.value}
-            type={props.type}
-            ></input>
-            </>
-        )
-    }
+    // let InpRpt = (props) => {
+    //     let onChangeFun;
+    //     if (props.stateName === 'Cha'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourCha( event.target.value)}
+    //         )
+    //     }
+    //     if (props.stateName === 'Dex'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourDex( event.target.value)}
+    //         )
+    //     }
+    //     if (props.stateName === 'Const'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourConst( event.target.value)}
+    //         )
+    //     }
+    //     if (props.stateName === 'Int'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourInt( event.target.value)}
+    //         )
+    //     }
+    //     if (props.stateName === 'Str'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourStr( event.target.value)}
+    //         )
+    //     }
+    //     if (props.stateName === 'Wis'){
+    //         onChangeFun= (
+    //           (event) =>  {setyourWis( event.target.value)}
+    //         )
+    //     }
+    //     return (
+    //         <>
+    //         <>{props.name}</>
+    //         <input 
+    //         onChange={onChangeFun}
+    //         placeholder = {props.name}
+    //         value={props.value}
+    //         type={props.type}
+    //         ></input>
+    //         </>
+    //     )
+    // }
     let allScores = [yourCha,yourConst,yourDex,yourInt,yourStr,yourWis]
   
     const setRace = () => {
@@ -117,12 +117,45 @@ export default function CharacterAbilityScores() {
             
       -
             <tbody>
-                <tr><td><InpRpt value={yourCha} type='number'  stateName='Cha' name='Charisma'/></td>
-                <td><InpRpt value={yourConst} type='number' stateName='Const' name='Constitution'/></td>
-                <td><InpRpt value={yourDex} type='number' stateName='Dex' name='Dexterity'/></td></tr>
-                <tr><td><InpRpt value={yourInt} type='number' stateName='Int' name='Intelligence'/></td>
-                <td><InpRpt value={yourStr} type='number' stateName='Str' name='Strength'/><br></br></td>
-                <td><InpRpt value={yourWis} type='number' stateName='Wis' name='Wisdom'/><br></br></td></tr>
+                <tr><td><InpRpt
+                 value={yourCha}
+                  type='number'  
+                  stateName='Cha' 
+                  name='Charisma'
+                  onChangeFun={(event) =>  {setyourCha( event.target.value)}}/></td>
+                <td><InpRpt 
+                value={yourConst} 
+                type='number' 
+                stateName='Const' 
+                name='Constitution'
+                onChangeFun={(event) =>  {setyourConst( event.target.value)}}/></td>
+                <td><InpRpt 
+                value={yourDex} 
+                type='number' 
+                stateName='Dex' 
+                name='Dexterity'
+                onChangeFun={ (event) =>  {setyourDex( event.target.value)}}/></td></tr>
+                <tr><td><InpRpt 
+                value={yourInt} 
+                type='number' 
+                stateName='Int' 
+                name='Intelligence'
+                onChangeFun={(event) =>  {setyourInt( event.target.value)}
+            }/></td>
+                <td><InpRpt 
+                value={yourStr} 
+                type='number' 
+                stateName='Str' 
+                name='Strength'
+                onChangeFun={(event) =>  {setyourStr( event.target.value)}
+            }/><br></br></td>
+                <td><InpRpt 
+                value={yourWis} 
+                type='number' 
+                stateName='Wis' 
+                name='Wisdom'
+                onChangeFun={(event) =>  {setyourWis( event.target.value)}
+            }/><br></br></td></tr>
                 
             </tbody>
         </table>
