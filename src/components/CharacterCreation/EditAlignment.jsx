@@ -13,6 +13,10 @@ export default function EditAlignment () {
         let allignUrl = event.target.closest('button').id
         dispatch({type:'RULE_URL', payload: allignUrl})
         setYourAllign(event.target.closest('button').textContent)
+        dispatch ({
+            type: 'EDIT_ONCHANGE',
+            payload: {property: 'alignment', value: (event.target.closest('button').textContent) }
+        })
     }
     return (
         <table className="edit-alignment-table">

@@ -1,9 +1,8 @@
-import ChooseLevel from "./CharacterCreationTabs/ChooseLevel";
 import EditAlignment from "./EditAlignment";
 import EditClass from "./EditClass";
 import EditRace from "./EditRace";
 import { useDispatch } from "react-redux";
-
+import ChooseEditLevel from "./EditLevel";
 const EditInput = (props) => {
     const dispatch = useDispatch()
 
@@ -71,14 +70,14 @@ const EditInput = (props) => {
         console.log('clicking name');
         return (
 
-            <form className="edit-input" onSubmit = {props.onSubmit}>
+            <form className="name-edit-input" onSubmit = {props.onSubmit}>
             <label>
             {props.compLabel}
-        <input type='text' onChange = {props.textOnChange}
+        <input className="nameinputinput" type='text' onChange = {props.textOnChange}
         defaultValue = {props.compDefValue}>
         </input>
         </label>
-        <button className="submit-edit">Submit Changes</button>
+        <button className="BtnRpt">Submit Changes</button>
         </form>
 
         )
@@ -88,7 +87,7 @@ const EditInput = (props) => {
         return (
             <>
             <EditAlignment/>
-            <button className="submit-edit">Submit Alignment</button>
+            <button onClick={props.onSubmit} className="submit-edit">Submit Alignment</button>
             <br/>
             </>
         )
@@ -97,8 +96,8 @@ const EditInput = (props) => {
         console.log('edit criteria is level');
         return (
             <>
-            <ChooseLevel/>
-            Level: <button className="submit-edit">Submit Level</button>
+            <ChooseEditLevel/>
+            Level: <button onClick={props.onSubmit} className="submit-edit">Submit Level</button>
             <br/>
             </>
         )

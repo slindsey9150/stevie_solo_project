@@ -170,6 +170,9 @@ router.put('/:id', (req, res) => {
   if (req.body.editCriteria == 'name') {
     sqlText = `UPDATE "characters" SET name = $1 WHERE id = $2`;
   }
+  if (req.body.editCriteria == 'level') {
+    sqlText = `UPDATE "characters" SET level = $1 WHERE id = $2`;
+  }
   else if (req.body.editCriteria == 'race_id') {
     sqlText= `UPDATE "characters" SET race_id = $1 WHERE id = $2`;
   }
@@ -192,7 +195,9 @@ router.put('/:id', (req, res) => {
   }else if (req.body.editCriteria == 'backstory') {
     sqlText= `UPDATE "characters" SET backstory = $1 WHERE id = $2`;
   }
- 
+  else if (req.body.editCriteria == 'alignment') {
+    sqlText= `UPDATE "characters" SET alignment = $1 WHERE id = $2`;
+  }
 
 const queryParams = [req.body.editCharacter[req.body.editCriteria], idToUpdate]
 console.log('query params', queryParams)
