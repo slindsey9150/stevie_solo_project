@@ -5,10 +5,11 @@ import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
 import InpRpt from "../../InpRpt/InpRpt"
+import SingleRule from "../../AllRules/SingleRule/SingleRule"
 
 
 export default function CharacterAbilityScores() {
-    const characterCreation = useSelector(store => store.createchars.setrace)
+    const characterCreation = useSelector(store => store.createchars.setAS)
     let [yourCha, setyourCha] = useState('')
     let [yourDex, setyourDex] = useState()
     let [yourConst, setyourConst] = useState()
@@ -16,66 +17,14 @@ export default function CharacterAbilityScores() {
     let [yourWis, setyourWis] = useState()
     let [yourInt, setyourInt] = useState()
     const dispatch = useDispatch([])
-    // let BtnRpt = (props) => {
-    //     const handleClick = (event) => {
-    //         console.log('all Scores');
-    //         console.table( allScores);
-    //         console.log('number entered', event.target.closest('InpRpt'));
-    //         console.log('State Name', props.stateName);
-    //         // {props.stateName}(event.target.closest('input').textContent)
-            
-    //      }
-    //     return (
-    //         <button onClick ={handleClick}>{props.name}</button>
-    //     )
-    // }
-    // let InpRpt = (props) => {
-    //     let onChangeFun;
-    //     if (props.stateName === 'Cha'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourCha( event.target.value)}
-    //         )
-    //     }
-    //     if (props.stateName === 'Dex'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourDex( event.target.value)}
-    //         )
-    //     }
-    //     if (props.stateName === 'Const'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourConst( event.target.value)}
-    //         )
-    //     }
-    //     if (props.stateName === 'Int'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourInt( event.target.value)}
-    //         )
-    //     }
-    //     if (props.stateName === 'Str'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourStr( event.target.value)}
-    //         )
-    //     }
-    //     if (props.stateName === 'Wis'){
-    //         onChangeFun= (
-    //           (event) =>  {setyourWis( event.target.value)}
-    //         )
-    //     }
-    //     return (
-    //         <>
-    //         <>{props.name}</>
-    //         <input 
-    //         onChange={onChangeFun}
-    //         placeholder = {props.name}
-    //         value={props.value}
-    //         type={props.type}
-    //         ></input>
-    //         </>
-    //     )
-    // }
+
+ 
+
+
+
     let allScores = [yourCha,yourConst,yourDex,yourInt,yourStr,yourWis]
   
-    const setRace = () => {
+    const setAS = () => {
         dispatch({type:'SET_AS', payload:allScores})
     }
    
@@ -86,79 +35,81 @@ export default function CharacterAbilityScores() {
     return (
         <>
         <NavCharacter/>
-    
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+     
+        
+        
+        
+        
+        
+        
+        
         <br/>
         <br/>
         <p className="yourClass">Your Ability Scores: Charisma:{yourCha} | Constitution:{yourConst} |
         Intelligenct:{yourInt} | Dexterity:{yourDex} | Wisdom:{yourWis} |
         Strength:{yourStr} 
-        <button onClick = {setRace}>Confirm your Ability Scores</button>
+        <button onClick = {setAS}>Confirm your Ability Scores</button>
         </p> 
-        <br/>
-        <br/>
-        <br/>
+       
 
-        <table>
+        <table className="ability-scores-table">
         <thead>
                     <tr>
                     <th colSpan='3' className='oneHead'>Choose Your Ability Scores</th>
                     </tr>
-                   
-            
-                
             </thead>
             
-      -
+      
             <tbody>
-                <tr><td><InpRpt
-                 value={yourCha}
+                <tr><InpRpt
+                  url='/api/ability-scores/cha'
+                  value={yourCha}
                   type='number'  
                   stateName='Cha' 
                   name='Charisma'
-                  onChangeFun={(event) =>  {setyourCha( event.target.value)}}/></td>
-                <td><InpRpt 
+                  onChangeFun={(event) =>  {setyourCha( event.target.value)}}/>
+                <InpRpt 
+                url='/api/ability-scores/con'
                 value={yourConst} 
                 type='number' 
                 stateName='Const' 
                 name='Constitution'
-                onChangeFun={(event) =>  {setyourConst( event.target.value)}}/></td>
-                <td><InpRpt 
+                onChangeFun={(event) =>  {setyourConst( event.target.value)}}/>
+                <InpRpt
+                url='/api/ability-scores/dex' 
                 value={yourDex} 
                 type='number' 
                 stateName='Dex' 
                 name='Dexterity'
-                onChangeFun={ (event) =>  {setyourDex( event.target.value)}}/></td></tr>
-                <tr><td><InpRpt 
+                onChangeFun={ (event) =>  {setyourDex( event.target.value)}}/></tr>
+                <tr><InpRpt 
+                url='/api/ability-scores/int' 
                 value={yourInt} 
                 type='number' 
                 stateName='Int' 
                 name='Intelligence'
                 onChangeFun={(event) =>  {setyourInt( event.target.value)}
-            }/></td>
-                <td><InpRpt 
+            }/>
+                <InpRpt 
+                url='/api/ability-scores/str' 
                 value={yourStr} 
                 type='number' 
                 stateName='Str' 
                 name='Strength'
                 onChangeFun={(event) =>  {setyourStr( event.target.value)}
-            }/><br></br></td>
-                <td><InpRpt 
+            }/>
+                <InpRpt 
+                url='/api/ability-scores/wis' 
                 value={yourWis} 
                 type='number' 
                 stateName='Wis' 
                 name='Wisdom'
                 onChangeFun={(event) =>  {setyourWis( event.target.value)}
-            }/><br></br></td></tr>
+            }/></tr>
                 
             </tbody>
         </table>
+        <SingleRule/>
         </>
     )
 }

@@ -2,7 +2,7 @@
 
 let BtnRptTwo = (props) => {
     return (
-        <button id ={props.url}className = 'BtnRpt'onClick = {(event) => {props.btnEvent(event)}}>{props.name}</button>
+        <button title={props.classId}id ={props.url}className = 'BtnRpt'onClick = {(event) => {props.btnEvent(event)}}>{props.name}</button>
     )
 }
 

@@ -13,6 +13,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   characters.level,
   characters.class_id, 
   characters.name,
+  characters.alignment,
   characters.race_id,
   characters.backstory,
   characters.notes,
@@ -25,7 +26,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   class.class,
   races.race
   FROM characters
-  JOIN "class" ON "class".class_id = "characters".class_id
+  JOIN "class" ON "class".id = "characters".class_id
   JOIN "races" ON races.id = characters.race_id
   WHERE characters.player_id = $1
   ;
@@ -49,15 +50,76 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 router.post('/', rejectUnauthenticated, (req,res) => {
   const character = req.body
+  console.log('req.body', req.body);
   const id = req.user.id
-  queryText = `INSERT INTO Characters ( "player_id", "name", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
+  queryText = `INSERT INTO Characters ( "player_id", "name", "alignment", "level", "charisma", "constitution", "dexterity", "intelligence", "strength",  "wisdom", "player", "class_id", "inventory",  "in_campaign", "backstory", "is_complete", "notes", "race_id")
   VALUES
-( $1, $2, $3, $4, $5, $6, $7, $8, $9, true, 1, 1, true, $10, true, $11, $12)`
+( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, true, $11, 1, true, $12, true, $13, $14)`
+let charName = character.name
+let charAlign = character.alignment
+let charLevel = character.level 
+let charCharisma = character.charisma
+let charConstitution = character.constitution
+let charDexterity = character.dexterity
+let charIntelligence= character.intelligence
+let charStrength = character.strength
+let charWisdom = character.wisdom
+let charClassId = character.classId
+let charBackstory = character.backstory
+let charNotes = character.notes
+let charRaceID = character.race
+console.log('character dexterity', charDexterity);
 
-const queryParams = [id, character.name, character.level, character.charisma,
-                    character.constitution, character.strength, character.dexterity,
-                    character.wisdom, character.intelligence, character.backstory,
-                    character.notes, character.race]
+
+
+
+if (character.name.length < 1){
+  charName = 'No Name Chosen'
+}
+if (character.alignment.length < 1){
+  charAlign = 'No Alignment chosen'
+}
+if (character.notes.length < 1){
+  charNotes = 'No Notes So Far'
+}
+if (charLevel.length < 1){
+  charLevel = 0
+}
+if (character.backstory.length < 1){
+  charBackstory = "That's curious. There's no backstory here"
+}
+if (character.race.length < 1){
+  charRaceID = '10'
+}
+if (character.classId.length < 1){
+  charClassId = '13'
+}
+if (charCharisma == undefined){
+  charCharisma = '0'
+}
+if (character.constitution == undefined){
+  charConstitution = '0'
+}
+if (charDexterity == undefined){
+  charDexterity = '0'
+}
+if (charIntelligence == undefined){
+  charIntelligence = '0'
+}
+if (charStrength == undefined){
+  charStrength = '0'
+}
+if (charWisdom == undefined){
+  charWisdom = '0'
+}
+
+
+
+
+const queryParams = [id, charName, charAlign, charLevel, charCharisma,
+                    charConstitution, charDexterity, charIntelligence,
+                    charStrength, charWisdom,  charClassId, charBackstory,
+                    charNotes, charRaceID]
  if(req.isAuthenticated()) {
 pool.query(queryText, queryParams)
 .then((results) => {
@@ -108,11 +170,11 @@ router.put('/:id', (req, res) => {
   if (req.body.editCriteria == 'name') {
     sqlText = `UPDATE "characters" SET name = $1 WHERE id = $2`;
   }
-  else if (req.body.editCriteria == 'race') {
-    sqlText= `UPDATE "characters" SET race = $1 WHERE id = $2`;
+  else if (req.body.editCriteria == 'race_id') {
+    sqlText= `UPDATE "characters" SET race_id = $1 WHERE id = $2`;
   }
-  else if (req.body.editCriteria == 'class') {
-    sqlText= `UPDATE "characters" SET class = $1 WHERE id = $2`;
+  else if (req.body.editCriteria == 'class_id') {
+    sqlText= `UPDATE "characters" SET class_id = $1 WHERE id = $2`;
   }else if (req.body.editCriteria == 'charisma') {
     sqlText= `UPDATE "characters" SET charisma = $1 WHERE id = $2`;
   }else if (req.body.editCriteria == 'constitution') {

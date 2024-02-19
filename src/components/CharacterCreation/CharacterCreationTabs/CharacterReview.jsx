@@ -36,6 +36,8 @@ export default function CharacterReview () {
         <br/>
         <>Level: {createReduce.setLevel}</>
         <br/>
+        <>Allignment: {createReduce.setAlignment}</>
+        <br/>
         <>Race: {createReduce.setRace}</>
         <br/>
         <>Class: {createReduce.setClass}</>

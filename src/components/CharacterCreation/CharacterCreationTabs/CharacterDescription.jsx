@@ -1,7 +1,7 @@
 import { useState } from "react"
 import NavCharacter from "../../NavCharacter/NavCharacter"
 import { useDispatch } from "react-redux"
-
+import './CSS FOLDER/CharacterClass.css'
 
 
 export default function CharacterDescription() {
@@ -70,12 +70,14 @@ export default function CharacterDescription() {
         <br></br>
         <br></br>
         <>This is where you'll choose the Character Description</>
-        <FilterComp/>
+        {/* <FilterComp/> */}
         <form onSubmit = {handleSubmit}>
-        <input value={useBackstory}
+        <textarea value={useBackstory}
+        className='medieval-textarea'
         onChange={(event) => setUseBackstory(event.target.value)}
         placeholder='Backstory'/> 
-        <input value={useNotes} 
+        <textarea value={useNotes} 
+        className='medieval-textarea'
         onChange={(event) => setUseNotes(event.target.value)}
         placeholder='Additional Notes'/> 
         <button>Save notes and backstory</button>

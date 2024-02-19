@@ -17,9 +17,25 @@ const setClass = (state = [], action) => {
         return state
     }
   }
+  const setAlignment = (state = [], action) => {
+    switch (action.type) {
+      case 'SET_ALIGN':
+        return action.payload
+      default:
+        return state
+    }
+  }
   const setRaceId = (state = [], action) => {
     switch (action.type) {
       case 'SET_RACE_ID':
+        return action.payload
+      default:
+        return state
+    }
+  }
+  const setClassId = (state = [], action) => {
+    switch (action.type) {
+      case 'SET_CLASS_ID':
         return action.payload
       default:
         return state
@@ -106,6 +122,8 @@ const setClass = (state = [], action) => {
     setBackground,
     setRaceId,
     getClassLevel,
-    setEquipment
+    setEquipment,
+    setAlignment,
+    setClassId
 
   })

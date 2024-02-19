@@ -1,107 +1,466 @@
+/* Medieval-themed table styles */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    font-family: 'Garamond', serif;
+    border: 3px solid #8B4513;
+    /* Brown border */
+}
 
-        /* Medieval-themed table styles */
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-            font-family: 'Garamond', serif;
-            border: 3px solid #8B4513; /* Brown border */
-        }
-        .oneHead {
-            background-color: #D2B48C;
-            text-align: center;
-        }
+.oneHead {
+    background-color: #D2B48C;
+    text-align: center;
+}
 
-        th, td {
-            padding: 10px;
-            border-bottom: 2px solid #8B4513; /* Brown border bottom */
-            border-right: 1px solid #8B4513; /* Brown border right */
-            text-align: center;
-        }
+th,
+td {
+    padding: 10px;
+    border-bottom: 2px solid #8B4513;
+    /* Brown border bottom */
+    border-right: 1px solid #8B4513;
+    /* Brown border right */
+    text-align: center;
+}
 
-        th {
-            background-color: #D2B48C; /* Tan background */
-            color: #8B4513; /* Brown text color */
-            font-size: 20px;
-            font-weight: bold;
-        }
+th {
+    background-color: #D2B48C;
+    /* Tan background */
+    color: #8B4513;
+    /* Brown text color */
+    font-size: 20px;
+    font-weight: bold;
+}
 
-        td {
-            background-color: #FFF8DC; /* Ivory background */
-        }
+td {
+    background-color: #FFF8DC;
+    /* Ivory background */
+}
 
-        /* Hover effect */
-        tr:hover {
-            background-color: #FFEFD5; /* Papaya Whip background */
-        }
+/* Hover effect */
+tr:hover {
+    background-color: #FFEFD5;
+    /* Papaya Whip background */
+}
 
-        .BtnRpt {
-            font-family: 'Garamond', serif;
-            font-size:x-large;
-            border: 0cap;
-            color:#8B4513;
-            background-color:#fffaf6;
-            align-items: center;
-        }
-        .BtnRpt:hover {
-            color: #fffaf6;
-            background-color: #8B4513;
-            border: none;
-            cursor: pointer;
-            outline: 0;
-        }
-        .yourClass {
-            font-family: 'Garamond', serif;
-            font-size:x-large;
-            color:#8B4513;
-            background-color:#fffaf6;
-            position:absolute;
-            left: 50%;
-             transform: translate(-50%, -80%);
-        }
-        .ConfButton {
-            font-family: 'Garamond', serif;
-            font-size:x-large;
-        }
+.BtnRpt {
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    border: 0cap;
+    color: #8B4513;
+    background-color: #fffaf6;
+    align-items: center;
+}
 
-        .levelChooser{
-            font-family: 'Garamond', serif;
-            background-color: #D2B48C;
-            color:#8B4513;
-
-            border-collapse: collapse;
-            border: 3px solid #8B4513; /* Brown border */
-            margin: 20px auto;
-            text-align: center;
-            width: 15%;
-            position: relative;
-            left: 10%;
-            top: 5%;
-            transform: translate(-50%, -0%);
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .levelFilter {
-            background-color:#fffaf6;
-            color:#8B4513;
-        }
-        .levelFilter:hover{
-            background-color:#8B4513;
-            color:#fffaf6;
-            cursor: pointer;
-            outline: 0;
-        }
-
-        .SingleItemClass {
-            font-family: 'Garamond', serif;
-            width: 400px; /* Set desired width */
-            height: 400px; /* Set desired height */
-            position:relative;
-            left: 50%;
-            top: 50%;
-            transform: translate(-10%, -0%);
-
-        }
+.BtnRpt:hover {
+    color: #fffaf6;
+    background-color: #8B4513;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}
 
 
-      
+
+.ConfButton {
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+}
+
+
+
+.SingleItemClass {
+    font-family: 'Garamond', serif;
+    width: 400px;
+    /* Set desired width */
+    height: 400px;
+    /* Set desired height */
+   
+    left: 50%;
+    top: 50%;
+    transform: translate(-10%, -0%);
+
+}
+
+.fantasy-input {
+    font-family: "Garamond", serif;
+    /* Choose a fantasy-like font */
+    font-size: 18px;
+    /* Adjust font size as needed */
+    color: #6a1b9a;
+    /* Text color */
+    background-color: #f3e5f5;
+    /* Background color */
+    border: 2px solid #6a1b9a;
+    /* Border color */
+    border-radius: 8px;
+    /* Border radius */
+    padding: 10px 15px;
+    /* Padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+}
+
+.fantasy-input:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #9c27b0;
+    /* Change border color on focus */
+    box-shadow: 0 0 8px rgba(156, 39, 176, 0.6);
+    /* Change box shadow on focus */
+}
+
+.medieval-textarea {
+    font-family: "IM Fell English", serif;
+    /* Choose a font that resembles medieval script */
+    font-size: 20px;
+    /* Font size remains the same */
+    color: #8b4513;
+    /* Text color resembling old parchment or wood */
+    background-color: #f5deb3;
+    /* Background color resembling parchment or aged paper */
+    border: 2px solid #8b4513;
+    /* Border color */
+    border-radius: 12px;
+    /* Border radius for a smoother look */
+    padding: 15px 20px;
+    /* Padding for the textarea */
+    width: 400px;
+    /* Width of the textarea */
+    height: 200px;
+    /* Increase height of the textarea */
+    resize: none;
+    /* Disable resizing */
+    vertical-align: top;
+    /* Align text to the top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+}
+
+.medieval-textarea:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #cd853f;
+    /* Change border color on focus */
+    box-shadow: 0 0 8px rgba(205, 133, 63, 0.6);
+    /* Change box shadow on focus */
+}
+
+.medieval-input {
+    font-family: "IM Fell English", serif;
+    /* Choose a font that resembles medieval script */
+    font-size: 20px;
+    /* Font size remains the same */
+    color: #8b4513;
+    /* Text color resembling old parchment or wood */
+    background-color: #f5deb3;
+    /* Background color resembling parchment or aged paper */
+    border: 2px solid #8b4513;
+    /* Border color */
+    border-radius: 12px;
+    /* Border radius for a smoother look */
+    padding: 5px 20px;
+    /* Padding for the input field */
+    width: 200px;
+    /* Increase width of the input field */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+}
+
+.medieval-input:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #cd853f;
+    /* Change border color on focus */
+    box-shadow: 0 0 8px rgba(205, 133, 63, 0.6);
+    /* Change box shadow on focus */
+}
+
+.edit-div {
+    display: flex;
+    width: 25%;
+    /* Each div fills one-third of the container */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid black;
+    /* Just for visualization */
+    border-top-left-radius: 50% 200px;
+    /* Adjust the border-radius values to create the arch */
+    border-top-right-radius: 50% 200px;
+    /* Adjust the border-radius values to create the arch */
+    background-color: #D2B48C;
+    overflow: hidden;
+    font-family: 'Garamond', serif;
+    color:solid black;
+  
+    position: absolute;
+    top: 48%;
+     left: 20%;
+     transform: translate(-50%, -50%);
+   
+}
+
+
+
+.single-character {
+    font-family: 'Garamond', serif;
+    display: flex;
+    width: 10%;
+    /* Each div fills one-third of the container */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+
+    width: 400px;
+    /* Set desired width */
+    height: 400px;
+    /* Set desired height */
+    overflow: auto;
+    /* or overflow: hidden; or overflow: scroll; depending on your needs */
+   
+    color: #8B4513;
+    /* Brown text color */
+    background-color: #FFEFD5;
+    /* Papaya Whip background */
+    position: absolute;
+    top: 70%;
+    left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+.class-table{
+    position: absolute;
+    top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.yourClass {
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    color: #8B4513;
+    background-color: #fffaf6;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+.levelChooser {
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    background-color: #D2B48C;
+    color: #8B4513;
+
+    border-collapse: collapse;
+    border: 3px solid #8B4513;
+    /* Brown border */
+    margin: 20px auto;
+    text-align: center;
+    width: 20%;
+   
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+
+.levelFilter {
+    background-color: #fffaf6;
+    color: #8B4513;
+}
+
+.levelFilter:hover {
+    background-color: #8B4513;
+    color: #fffaf6;
+    cursor: pointer;
+    outline: 0;
+}
+
+.edit-class-table{
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.edit-race-table{
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.edit-alignment-table{
+        position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+.alignment-table{
+    position: absolute;
+    top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.yourAlignment {
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    color: #8B4513;
+    background-color: #fffaf6;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+}
+.name-picker{
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    background-color: #D2B48C;
+    color: #8B4513;
+
+    border-collapse: collapse;
+    border: 3px solid #8B4513;
+    /* Brown border */
+    margin: 20px auto;
+    text-align: center;
+    width: 20%;
+   
+    font-weight: bold;
+    position: absolute;
+    top: 26%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}.ability-scores-table{
+    height: 10%;
+    width: 50%;
+    position: absolute;
+    top: 42%;
+     left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.ability-score-input{
+    height: 5%;
+    width: 25%;
+    position: absolute;
+    top: 57%;
+     left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    background-color: #D2B48C;
+    color: #8B4513;
+}
+
+
+
+.edit-textarea {
+    position: absolute;
+    top: 40%;
+     left: 60%;
+    transform: translate(-50%, -50%);
+    font-family: "IM Fell English", serif;
+    /* Choose a font that resembles medieval script */
+    font-size: 20px;
+    /* Font size remains the same */
+    color: #8b4513;
+    /* Text color resembling old parchment or wood */
+    background-color: #f5deb3;
+    /* Background color resembling parchment or aged paper */
+    border: 2px solid #8b4513;
+    /* Border color */
+    border-radius: 12px;
+    /* Border radius for a smoother look */
+    padding: 15px 20px;
+    /* Padding for the textarea */
+    width: 400px;
+    /* Width of the textarea */
+    height: 200px;
+    /* Increase height of the textarea */
+    resize: none;
+    /* Disable resizing */
+    vertical-align: top;
+    /* Align text to the top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Box shadow */
+}
+
+.edit-textarea:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #cd853f;
+    /* Change border color on focus */
+    box-shadow: 0 0 8px rgba(205, 133, 63, 0.6);
+    /* Change box shadow on focus */
+}
+.edit-finish{
+    position: absolute;
+    top: 88%;
+     left: 80%;
+    transform: translate(-50%, -50%);
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    border: 0cap;
+    color: #8B4513;
+    background-color: #fffaf6;
+    align-items: center;
+
+}
+
+.edit-finish:hover {
+    color: #fffaf6;
+    background-color: #8B4513;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}
+.submit-edit{
+    position: absolute;
+    top: 26%;
+     left: 39%;
+    transform: translate(-46%, -40%);
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    border: 0cap;
+    color: #8B4513;
+    background-color: #fffaf6;
+    align-items: center;
+}
+
+.submit-edit:hover{
+    color: #fffaf6;
+    background-color: #8B4513;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}
+.as-input{
+    width: 15%;
+}
+.edit-char{
+
+    font-family: 'Garamond', serif;
+    font-size: x-large;
+    border: 0cap;
+    color: #8B4513;
+    background-color: #fffaf6;
+    align-items: center;
+}
+
+.edit-char:hover{
+    color: #fffaf6;
+    background-color: #8B4513;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}

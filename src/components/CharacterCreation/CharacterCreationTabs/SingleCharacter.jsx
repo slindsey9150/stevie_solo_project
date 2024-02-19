@@ -29,10 +29,13 @@ else {
 
 
     return (
-       <>
-       View your Character here
+       <div className="single-character">
        <br/>
        Name: {singleCharacter?.name}
+       <br/>
+       Alignment: {singleCharacter?.alignment}
+       <br/>
+       Level: {singleCharacter?.level}
        <br/>
        Race: {singleCharacter?.race}
        <br/>
@@ -40,7 +43,7 @@ else {
        <br/>
        Charisma: {singleCharacter?.charisma}
        <br/>
-       Constitutuion: {singleCharacter?.constitution}
+       Constitution: {singleCharacter?.constitution}
        <br/>
        Dexterity: {singleCharacter?.dexterity}
        <br/>
@@ -54,9 +57,9 @@ else {
        <br/>
        Backstory: {singleCharacter?.backstory}
        <br/>
-       <button onClick = {editCharacter}>EDIT ✏️</button>
+       <button className="edit-char"onClick = {editCharacter}>EDIT ✏️</button>
 
-       </>
+       </div>
     )
 }
 }

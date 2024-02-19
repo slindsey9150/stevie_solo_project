@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
+import BackButton from "../BackButton/BackButton"
 
 export default function DeleteCharacter () {
 
@@ -14,12 +15,13 @@ export default function DeleteCharacter () {
     // console.log('store', store);
 
     return (
-        <>
-        <>This is where you'll Delete a Character</>
+        <div>
+            <BackButton/>
+       
         {store.CharactersReducer?.map((character) => { return (
-            <p key={character.id}>{Object.values(character)}<button onClick={() => {handleDelete(character.charid)}}>Delete Character</button></p>
+            <p key={character.id}>Name: {character.name}Level: {character.level}Class: {character.class} Race: {character.race}<button onClick={() => {handleDelete(character.charid)}}>Delete Character</button></p>
         )
         })}
-        </>
+        </div>
     )
 }

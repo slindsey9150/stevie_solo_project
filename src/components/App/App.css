@@ -5,8 +5,17 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0px;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-image: url('../../../public/images/medieval-background.jpeg'); /* Set background image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+}
+
+.content {
+  text-align: center; /* Center content horizontally */
+  padding: 50px; /* Add some padding for better visibility */
+  color: white; /* Set text color to white for better contrast */
 }
 
 img {

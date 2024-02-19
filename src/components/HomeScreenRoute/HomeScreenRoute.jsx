@@ -9,7 +9,7 @@ export default function HomeScreenRoute (props) {
     }
     return (
         <div>
-            <button onClick={handleClick}>{props.text}</button>
+            <button className={props.class} onClick={handleClick}>{props.text}</button>
         </div>
     )
 }

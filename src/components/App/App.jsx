@@ -38,6 +38,7 @@ import EquipmentPage from '../AllEquipment/EquipmentPage/EquipmentCategoriesPage
 import EquipmentCategory from '../AllEquipment/EquipmentCategory/EquipmentCategoryPage'
 import SpellsPage from '../AllSpells/SpellsPage/SpellsPage'
 import EditCharacter from '../CharacterCreation/EditCharacter';
+
 import './App.css';
 
 

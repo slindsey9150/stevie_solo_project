@@ -144,7 +144,7 @@ function SingleRule(props) {
         fifthValueLable = 'traits: '
         fifthValue = rule?.traits?.map((trait) => {
             return (
-                <> {trait.name}|</>
+                <button id={trait.url}> {trait.name}|</button>
             )
         })
         sixthValueLable = 'Languages: '
@@ -155,9 +155,10 @@ function SingleRule(props) {
     else if (asUrl === '/api/ability-scores/') {
         firstValueLable = 'ability score: '
         firstValue = rule.name;
-        secondValueLable = 'Description: '
+        secondValueLable = ' '
         secondValue = rule.desc
         thirdValue = ''
+        thirdValueLable = ''
         fourthValueLable = ''
         fourthValue = ''
         fifthValueLable = ''
@@ -230,7 +231,10 @@ function SingleRule(props) {
     }
     
 
-
+if (rule?.length < 1){
+    return <></>
+}
+else {
     return (
         <div className ="SingleRuleDiv" key={ruleKey}>
             <p><b>{firstValueLable}</b><span>{firstValue}</span></p>
@@ -250,6 +254,7 @@ function SingleRule(props) {
             <p>{ninthValue}</p>
         </div>
     )
+}
 
 }
 

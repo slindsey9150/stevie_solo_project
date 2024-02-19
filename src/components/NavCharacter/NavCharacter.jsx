@@ -7,6 +7,7 @@ import BackButton from '../BackButton/BackButton';
 
 function NavCharacter() {
   const user = useSelector((store) => store.user);
+  const createCharacter = useSelector((store) => store.createchars)
 
   return (
     <div className="NavCharacter">
@@ -15,6 +16,7 @@ function NavCharacter() {
         <Link to='/createcharacter'>
         <h2 className="NavCharacter-title">Create a Character</h2>
         </Link>
+        <div className='Navcontainer'>
       <div>
         {/* If a user is logged in, show these links */}
         {user.id && (
@@ -40,6 +42,11 @@ function NavCharacter() {
           </>
         )}
       </div>
+     
+      <div className='DisplayCharacter'>
+        Name: {createCharacter.setName}Allignment: {createCharacter.setAlignment}Level: {createCharacter.setLevel}Race: {createCharacter.setRace}Class: {createCharacter.setClass}
+      </div>
+    </div>
     </div>
   );
 }

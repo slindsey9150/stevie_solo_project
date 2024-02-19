@@ -4,7 +4,9 @@ import axios from 'axios';
 import BackButton from "../BackButton/BackButton";
 import { useState } from "react";
 import EditInput from "./EditInput";
+import ChooseLevel from "./CharacterCreationTabs/ChooseLevel";
 // import EditCharacterShowNew from "./CharacterCreationTabs/EditCharacterShowNew";
+import SingleRule from "../AllRules/SingleRule/SingleRule";
 
 export default function EditCharacter() {
     const dispatch = useDispatch()
@@ -58,7 +60,7 @@ export default function EditCharacter() {
 
     }
     let inputType = 'text'
-    if (editCriteria == 'charisma' || 'dexterity'|| 'intelligence' || 'strength' || 'wisdom' || 'constitution') {
+    if (editCriteria == 'charisma' || 'dexterity'|| 'intelligence' || 'strength' || 'wisdom' || 'constitution' || 'level') {
         inputType = 'number'
     }
     else {
@@ -71,34 +73,40 @@ export default function EditCharacter() {
     // console.log('character', characterstore[storeIndex]);
     let singleCharacter = characterstore[storeIndex]
     return (
-        <>
+        <div className='edit-container'>
             <BackButton />
-            <br />
-            Edit your Character here
+          
+            <div className='edit-div'>
+          
             <br/>
-            We are editing {singleCharacter?.name} With id {singleCharacter?.charid}
+           
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id='name'>Name</button> {singleCharacter?.name}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id='name'>Name</button> {singleCharacter?.name}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="race">Race</button> {singleCharacter?.race}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id='level'>Level</button> {singleCharacter?.level}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="class">Class</button> {singleCharacter?.class}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id='alignment'>Alignment</button> {singleCharacter?.alignment}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="charisma">Charisma</button> {singleCharacter?.charisma}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="race_id">Race</button> {singleCharacter?.race}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="constitution">Constitution</button> {singleCharacter?.constitution}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="class_id">Class</button> {singleCharacter?.class}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="dexterity">Dexterity</button> {singleCharacter?.dexterity}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="charisma">Charisma</button> {singleCharacter?.charisma}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="intelligence">Intelligence</button>  {singleCharacter?.intelligence}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="constitution">Constitution</button> {singleCharacter?.constitution}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="strength">Strength</button> {singleCharacter?.strength}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="dexterity">Dexterity</button> {singleCharacter?.dexterity}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="wisdom">Wisdom</button> {singleCharacter?.wisdom}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="intelligence">Intelligence</button>  {singleCharacter?.intelligence}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="notes">Notes</button> {singleCharacter?.notes}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="strength">Strength</button> {singleCharacter?.strength}
             <br />
-            <button onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="backstory">Backstory</button> {singleCharacter?.backstory}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="wisdom">Wisdom</button> {singleCharacter?.wisdom}
+            <br />
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="notes">Notes</button> {singleCharacter?.notes}
+            <br />
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="backstory">Backstory</button> {singleCharacter?.backstory}
+            </div>
             <br />
             {/* <form onSubmit = {handleSubmit}>
             <label>
@@ -117,9 +125,10 @@ export default function EditCharacter() {
         compLabel = {editCriteria}
         compDefValue = {singleCharacter?.[editCriteria]}
         editCriteria={editCriteria}/>
-            <button onClick={handleFinishEdit}>Finish Changing Character</button>
+            <button className="edit-finish" onClick={handleFinishEdit}>Finish Changing Character</button>
             {/* <EditCharacterShowNew/> */}
-        </>
+            <SingleRule/>
+        </div>
 
     )
 }

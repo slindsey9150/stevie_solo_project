@@ -15,7 +15,7 @@ export default function CharacterRace() {
     const dispatch = useDispatch()
     let BtnRpt = (props) => {
         return (
-            <button title = {props.url}id={props.raceId} onClick = {(event) => {handleClick(event)}}>{props.name}</button>
+            <button className = 'BtnRpt' title = {props.url}id={props.raceId} onClick = {(event) => {handleClick(event)}}>{props.name}</button>
         )
     }
     const setRace = () => {
@@ -30,8 +30,9 @@ export default function CharacterRace() {
         event.preventDefault()
         setYourRace(event.target.closest('button').textContent)
         setYourRaceId(event.target.closest('button').id)
-        setYourUrl(event.target.closest('button').title)
-        dispatch({type:'RULE_URL', payload:yourUrl})
+        // setYourUrl(event.target.closest('button').title)
+        let useRace = event.target.closest('button').title
+        dispatch({type:'RULE_URL', payload:useRace})
 
 
     }

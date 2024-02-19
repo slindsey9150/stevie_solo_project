@@ -5,6 +5,7 @@ function* createCharacter (action) {
     console.log('creating a Character with a saga', action.payload);
     const character = {
         name: action.payload.setName,
+        alignment: action.payload.setAlignment,
         level: action.payload.setLevel,
         charisma: action.payload.setAbilityScores[0],
         constitution: action.payload.setAbilityScores[1],
@@ -13,6 +14,7 @@ function* createCharacter (action) {
         wisdom: action.payload.setAbilityScores[5],
         intelligence: action.payload.setAbilityScores[3],
         class: action.payload.setClass,
+        classId: action.payload.setClassId,
         race: action.payload.setRaceId,
         notes: action.payload.setNotes,
         backstory: action.payload.setBackstory,

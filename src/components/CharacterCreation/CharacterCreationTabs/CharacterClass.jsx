@@ -20,6 +20,8 @@ console.log('class level', classLevel);
 
 let [yourClass, setYourClass] = useState('')
 let [yourUrl, setYourUrl] = useState('')
+let [yourClassId, setYourClassId] = useState('')
+
 
     let classlevelone = {}
     let classlevelonelable = ''
@@ -50,15 +52,18 @@ let [yourUrl, setYourUrl] = useState('')
 
     const setClass =() => {
         dispatch({type:'SET_CLASS', payload:yourClass})
+        dispatch({type:'SET_CLASS_ID', payload:yourClassId})
     }
 
     let sendLevel = 1
     const handleClick = (event) => {
         setYourClass(event.target.closest('button').textContent)
-        setYourUrl(event.target.closest('button').id)
+        setYourClassId(event.target.closest('button').title)
+        // setYourUrl(event.target.closest('button').id)
+        let useUrl = event.target.closest('button').id
         console.log('your url', yourUrl);
         console.log('Class Level', classLevel);
-        dispatch({type:'RULE_URL', payload:yourUrl})
+        dispatch({type:'RULE_URL', payload:useUrl})
         if (characterLevel == '') {
             sendLevel = 1
         }
@@ -74,8 +79,9 @@ let [yourUrl, setYourUrl] = useState('')
     }
 
     return (
-        <>
+       <div>
         <NavCharacter/>
+        <div className="class-page">
         <br></br>
         <br></br>
         <br></br>
@@ -91,7 +97,7 @@ let [yourUrl, setYourUrl] = useState('')
       <br></br>
       <br></br>
       <br></br>
-        <table>
+        <table className="class-table">
             <thead>
                     <tr>
                     <th colSpan='3' className='oneHead'>Choose Your Class</th>
@@ -102,10 +108,10 @@ let [yourUrl, setYourUrl] = useState('')
             </thead>
       
             <tbody>
-                <tr><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/barbarian' name='Barbarian'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/bard' name='Bard'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/cleric' name='Cleric'/></td></tr>
-                <tr><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/druid' name='Druid'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/fighter' name='Fighter'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/monk' name='Monk'/></td></tr>
-                <tr><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/paladin' name='Paladin'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/ranger' name='Ranger'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/rogue' name='Rogue'/></td></tr>
-                <tr><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/sorcerer' name='Sorcerer'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/warlock' name='Warlock'/></td><td><BtnRpt btnEvent= {handleClick} url ='/api/classes/wizard' name='Wizard'/></td></tr>
+                <tr><td><BtnRpt classId= '2'  btnEvent= {handleClick} url ='/api/classes/barbarian' name='Barbarian'/></td><td><BtnRpt classId= '1' btnEvent= {handleClick} url ='/api/classes/bard' name='Bard'/></td><td><BtnRpt classId= '3' btnEvent= {handleClick} url ='/api/classes/cleric' name='Cleric'/></td></tr>
+                <tr><td><BtnRpt classId= '4' btnEvent= {handleClick} url ='/api/classes/druid' name='Druid'/></td><td><BtnRpt classId= '5' btnEvent= {handleClick} url ='/api/classes/fighter' name='Fighter'/></td><td><BtnRpt classId= '6' btnEvent= {handleClick} url ='/api/classes/monk' name='Monk'/></td></tr>
+                <tr><td><BtnRpt classId= '7' btnEvent= {handleClick} url ='/api/classes/paladin' name='Paladin'/></td><td><BtnRpt classId= '8' btnEvent= {handleClick} url ='/api/classes/ranger' name='Ranger'/></td><td><BtnRpt classId= '9' btnEvent= {handleClick} url ='/api/classes/rogue' name='Rogue'/></td></tr>
+                <tr><td><BtnRpt classId= '10' btnEvent= {handleClick} url ='/api/classes/sorcerer' name='Sorcerer'/></td><td><BtnRpt classId= '11' btnEvent= {handleClick} url ='/api/classes/warlock' name='Warlock'/></td><td><BtnRpt classId= '12' btnEvent= {handleClick} url ='/api/classes/wizard' name='Wizard'/></td></tr>
                 
             </tbody>
         </table>
@@ -115,7 +121,7 @@ let [yourUrl, setYourUrl] = useState('')
 
         <div>
             {/* Here we will show information about each class */}
-            <p>Here we will show level specific information about each class</p>
+            
             <div>
                 {classlevelonelable}: {classlevelone.cantrips_known} {classlevelone.spell_slots_level_1} {classlevelone.spell_slots_level_2} {classlevelone.spell_slots_level_3}
             </div>
@@ -127,6 +133,7 @@ let [yourUrl, setYourUrl] = useState('')
             </div>
         </div>
 
-        </>
+        </div>
+        </div>
     )
 }
