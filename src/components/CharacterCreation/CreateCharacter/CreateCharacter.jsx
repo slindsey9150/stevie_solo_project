@@ -36,6 +36,11 @@ export default function CreateCharacter () {
         dispatch({type:'SET_ALIGN', payload: yourAllign})
         console.log('setting alignment');
     }
+    const demoClick = () => {
+        console.log("i'm doing a demo");
+        setUseName('Barry B Benson')
+        setYourAllign('Chaotic Evil')
+    }
 
     return (
         <>
@@ -60,7 +65,7 @@ export default function CreateCharacter () {
         <br/>
         <br/>
         <br/>
-        <p className="yourAlignment">Your Allignment: {yourAllign} <button className='ConfButton' onClick={setAlign}>Confirm Your Allignment</button></p>
+        <p onClick={demoClick}className="yourAlignment">Your Allignment: {yourAllign} <button className='ConfButton' onClick={setAlign}>Confirm Your Allignment</button></p>
 
        
         <table className="alignment-table">

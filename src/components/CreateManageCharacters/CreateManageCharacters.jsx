@@ -10,9 +10,7 @@ export default function CreateManageCharacters () {
         <>
         <BackButton/>
         <div> 
-            This is the page that will
-             route you to different
-            aspects of your character
+       
 
 
             <ManagerComponent

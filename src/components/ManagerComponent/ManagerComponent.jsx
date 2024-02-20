@@ -40,8 +40,8 @@ const RenderStores = (event) => {
 
 
     return (
-        <div> This is where the manager component will be
-            <p> for {props.name}</p>
+        <div> 
+
 
             <table id="myTable">
                 <thead>

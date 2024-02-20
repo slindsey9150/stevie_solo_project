@@ -17,11 +17,13 @@ export default function DeleteCharacter () {
     return (
         <div>
             <BackButton/>
+            <div className="delete-character">
        
         {store.CharactersReducer?.map((character) => { return (
             <p key={character.id}>Name: {character.name}Level: {character.level}Class: {character.class} Race: {character.race}<button onClick={() => {handleDelete(character.charid)}}>Delete Character</button></p>
         )
         })}
+        </div>
         </div>
     )
 }

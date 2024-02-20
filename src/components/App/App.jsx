@@ -38,6 +38,12 @@ import EquipmentPage from '../AllEquipment/EquipmentPage/EquipmentCategoriesPage
 import EquipmentCategory from '../AllEquipment/EquipmentCategory/EquipmentCategoryPage'
 import SpellsPage from '../AllSpells/SpellsPage/SpellsPage'
 import EditCharacter from '../CharacterCreation/EditCharacter';
+import GenerateNpcs from '../CampaignCreation/CampaignCreationTabs/CampaignGenerateNpsc';
+import CampaignLinks from '../CampaignCreation/CampaignCreationTabs/CampaignLinks';
+import CampaignNotes from '../CampaignCreation/CampaignCreationTabs/CampaignNotes';
+import CampaignSetting from '../CampaignCreation/CampaignCreationTabs/CampaignSetting';
+import GenerateMaps from '../CampaignCreation/CampaignCreationTabs/CampaignGenerateMaps';
+import PlayerBackstories from '../CampaignCreation/CampaignCreationTabs/PlayerBackstories';
 
 import './App.css';
 
@@ -101,6 +107,48 @@ function App() {
             path="/createcampaign"
           >
             <CreateCampaign/>
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/generatenpcs"
+          >
+            <GenerateNpcs/>
+            </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/generatemaps"
+          >
+            <GenerateMaps/>
+            </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/campaignlinks"
+          >
+            <CampaignLinks/>
+            </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/campaignsetting"
+          >
+            <CampaignSetting/>
+            </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/campaignnotes"
+          >
+            <CampaignNotes/>
+            </ProtectedRoute>
+            <ProtectedRoute
+            // logged in shows generate npcs else shows LoginPage
+            exact
+            path="/playerbackstories"
+          >
+            <PlayerBackstories/>
           </ProtectedRoute>
           <ProtectedRoute
             // logged in shows Campaigns else shows LoginPage

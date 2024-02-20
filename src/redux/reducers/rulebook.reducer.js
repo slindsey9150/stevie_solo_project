@@ -20,13 +20,16 @@ const RuleBookReducer = (state = [], action) => {
   }
 
   const ruleUrl = (state = '', action) => {
-    switch (action.type) {
-        case 'SEARCH_RULE':
-            return action.payload;
-            default: 
-            return state;
-    }
-  }
+
+  if(action.type === 'SEARCH_RULE') {
+    // action.payload is the object from the DB
+    return action.payload;
+}else if (action.type === 'CLEAR_RULE') {
+  return ''
+}
+  return state;
+}
+
 
 
   export default combineReducers ({

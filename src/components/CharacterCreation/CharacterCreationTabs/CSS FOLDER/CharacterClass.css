@@ -190,12 +190,12 @@ tr:hover {
     border-top-right-radius: 50% 200px;
     /* Adjust the border-radius values to create the arch */
     background-color: #D2B48C;
-    overflow: hidden;
+    overflow: auto;
     font-family: 'Garamond', serif;
     color:solid black;
   
     position: absolute;
-    top: 48%;
+    top: 60%;
      left: 20%;
      transform: translate(-50%, -50%);
    
@@ -212,6 +212,8 @@ tr:hover {
     justify-content: center;
     align-items: center;
     border: 5px solid black;
+    overflow: auto; /* or overflow: hidden; or overflow: scroll; depending on your needs */
+
 
     width: 400px;
     /* Set desired width */
@@ -501,4 +503,23 @@ tr:hover {
     font-size: x-large;
     background-color: #D2B48C;
     color: #8B4513;
+}
+.delete-character{
+    background-color: #D2B48C;
+    width: 550px;
+    position: absolute;
+    top: 40%;
+     left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+}
+
+.backstory-div{
+    font-family: 'Garamond', serif;
+    width: 400px; /* Set desired width */
+    height: 100px; /* Set desired height */
+    overflow: auto; /* or overflow: hidden; or overflow: scroll; depending on your needs */
+    color: #8B4513; /* Brown text color */
+    background-color: #FFEFD5; /* Papaya Whip background */
 }

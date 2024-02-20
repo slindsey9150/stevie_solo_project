@@ -16,7 +16,7 @@ function NavCampaign() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="NavCampaignLink" to="/plauerbackstories">
+            <Link className="NavCampaignLink" to="/playerbackstories">
               Player Backstories
             </Link>
             <Link className="NavCampaignLink" to="/campaignsetting">
@@ -30,6 +30,9 @@ function NavCampaign() {
             </Link>
             <Link className="NavCampaignLink" to="/generatenpcs">
              Generate NPCs
+            </Link>
+            <Link className="NavCampaignLink" to="/generatemaps">
+              Generate Maps
             </Link>
 
 

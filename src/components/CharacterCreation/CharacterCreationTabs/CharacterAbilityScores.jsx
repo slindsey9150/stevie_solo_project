@@ -28,27 +28,28 @@ export default function CharacterAbilityScores() {
         dispatch({type:'SET_AS', payload:allScores})
     }
    
-   
+   const demoClick = () => {
+    console.log('im in a demo');
+    setyourCha('21')
+    setyourConst('3')
+    setyourDex('16')
+    setyourInt('17')
+    setyourStr('1')
+    setyourWis('10')
+   }
 
 
 
     return (
         <>
         <NavCharacter/>
-     
-        
-        
-        
-        
-        
-        
         
         <br/>
         <br/>
-        <p className="yourClass">Your Ability Scores: Charisma:{yourCha} | Constitution:{yourConst} |
+        <p onClick={demoClick}className="yourClass">Your Ability Scores: Charisma:{yourCha} | Constitution:{yourConst} |
         Intelligenct:{yourInt} | Dexterity:{yourDex} | Wisdom:{yourWis} |
         Strength:{yourStr} 
-        <button onClick = {setAS}>Confirm your Ability Scores</button>
+        <button className="ConfButton" onClick = {setAS}>Confirm your Ability Scores</button>
         </p> 
        
 

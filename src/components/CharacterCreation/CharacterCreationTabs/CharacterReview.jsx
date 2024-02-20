@@ -30,8 +30,8 @@ export default function CharacterReview () {
         <br/>
         <br/>
 
-        <> This is where you review your character before submitting them to the server</>
-        <br/>
+        <div className="single-character">
+      
         <>Name: {createReduce.setName}</>
         <br/>
         <>Level: {createReduce.setLevel}</>
@@ -42,15 +42,26 @@ export default function CharacterReview () {
         <br/>
         <>Class: {createReduce.setClass}</>
         <br/>
-        <> ability scores: {abilityScores?.map((item,i) => <span key={i}> {item}</span>)}</>
+        <> ability scores;<br/>
+         Charisma: {abilityScores[0]}<br/>
+         Constitution: {abilityScores[1]}<br/>
+         Dexterity: {abilityScores[2]}<br/>
+         Intelligence: {abilityScores[3]}<br/>
+         Strength: {abilityScores[4]}<br/>
+         Wisdom: {abilityScores[5]}</>
         <br/>
         <>Background: {createReduce.setBackground}</>
         <br/>
+        <div className="backstory-div">
         <>Notes: {createReduce.setNotes}</>
         <br></br>
+        </div>
+        <div className="backstory-div">
         <>Backstory: {createReduce.setBackstory}</>
         <br/>
-        <button onClick={handleClick}>Submit Character</button>
+        </div>
+        <button className='BtnRpt'onClick={handleClick}>Submit Character</button>
+        </div>
         
         </>
     )

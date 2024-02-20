@@ -13,8 +13,8 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div>
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
+      <h2 className='welcome-bar'>Welcome, {user.username}!</h2>
+      
 
       <div className="Routecontainer">
         <div id="div1" className="large-div">

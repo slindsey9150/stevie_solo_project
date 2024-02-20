@@ -53,10 +53,14 @@ else {
        <br/>
        Wisdom: {singleCharacter?.wisdom}
        <br/>
+       <div className="backstory-div">
        Notes: {singleCharacter?.notes}
        <br/>
+       </div>
+       <div className="backstory-div">
        Backstory: {singleCharacter?.backstory}
        <br/>
+       </div>
        <button className="edit-char"onClick = {editCharacter}>EDIT ✏️</button>
 
        </div>

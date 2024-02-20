@@ -59,6 +59,11 @@ export default function CharacterDescription() {
         handleSaveBackstory()
         handleSaveNotes()
     }
+    const demoClick = () => {
+        console.log("i'm in a demo");
+        setUseBackstory('In "Bee Movie," Barry B. Benson, a bee, embarks on a steamy affair with Vanessa, a human florist, amidst his legal battle against humanity. Their forbidden romance buzzes with passion, challenging societal boundaries and igniting desires beyond the hive.')
+        setUseNotes('')
+    }
     return (
         <>
         <NavCharacter/>
@@ -69,8 +74,8 @@ export default function CharacterDescription() {
         <br></br>
         <br></br>
         <br></br>
-        <>This is where you'll choose the Character Description</>
         {/* <FilterComp/> */}
+        <p onClick={demoClick}><b>Write some things here buddy</b></p>
         <form onSubmit = {handleSubmit}>
         <textarea value={useBackstory}
         className='medieval-textarea'
@@ -80,7 +85,7 @@ export default function CharacterDescription() {
         className='medieval-textarea'
         onChange={(event) => setUseNotes(event.target.value)}
         placeholder='Additional Notes'/> 
-        <button>Save notes and backstory</button>
+        <button className="BtnRpt">Save notes and backstory</button>
         </form>
         <br/>
         <br/>

@@ -103,9 +103,9 @@ export default function EditCharacter() {
             <br />
             <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="wisdom">Wisdom</button> {singleCharacter?.wisdom}
             <br />
-            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="notes">Notes</button> {singleCharacter?.notes}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="notes">Notes</button><div className="backstory-div">{singleCharacter?.notes}</div> 
             <br />
-            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="backstory">Backstory</button> {singleCharacter?.backstory}
+            <button className="BtnRpt" onClick={(event) => setEditCriteria(event.target.closest('button').id)}value={editCriteria} id="backstory">Backstory</button> <div className="backstory-div">{singleCharacter?.backstory}</div>
             </div>
             <br />
             {/* <form onSubmit = {handleSubmit}>

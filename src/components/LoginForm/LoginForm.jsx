@@ -8,6 +8,11 @@ function LoginForm() {
   const errors = useSelector(store => store.errors);
   const dispatch = useDispatch();
 
+  const demoClick = () => {
+    setPassword('love5683')
+    setUsername('leeroyjenkins')
+  }
+
   const login = (event) => {
     event.preventDefault();
 
@@ -26,7 +31,7 @@ function LoginForm() {
 
   return (
     <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
+      <h2 onClick={demoClick}>Login</h2>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
