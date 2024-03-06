@@ -1,3 +1,7 @@
+.webcamImage{
+  height: 300px;
+  width:auto
+}
 .Navcontainer {
   display: flex;
   flex-direction: column;
